@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464A9B032936B18500015668 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 464A9B022936B18500015668 /* MapboxMaps */; };
+		464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B042936B24400015668 /* MapBoxMapView.swift */; };
 		A67ABD232924157800726A2F /* ShelterSafeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD222924157800726A2F /* ShelterSafeApp.swift */; };
 		A67ABD252924157800726A2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD242924157800726A2F /* ContentView.swift */; };
 		A67ABD272924157A00726A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67ABD262924157A00726A2F /* Assets.xcassets */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		464A9B042936B24400015668 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		A67ABD1F2924157800726A2F /* ShelterSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelterSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67ABD222924157800726A2F /* ShelterSafeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeApp.swift; sourceTree = "<group>"; };
 		A67ABD242924157800726A2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464A9B032936B18500015668 /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +105,7 @@
 			children = (
 				A67ABD222924157800726A2F /* ShelterSafeApp.swift */,
 				A67ABD242924157800726A2F /* ContentView.swift */,
+				464A9B042936B24400015668 /* MapBoxMapView.swift */,
 				A67ABD262924157A00726A2F /* Assets.xcassets */,
 				A67ABD2B2924157A00726A2F /* Persistence.swift */,
 				A67ABD302924157A00726A2F /* Info.plist */,
@@ -151,6 +156,9 @@
 			dependencies = (
 			);
 			name = ShelterSafe;
+			packageProductDependencies = (
+				464A9B022936B18500015668 /* MapboxMaps */,
+			);
 			productName = ShelterSafe;
 			productReference = A67ABD1F2924157800726A2F /* ShelterSafe.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +231,9 @@
 				Base,
 			);
 			mainGroup = A67ABD162924157800726A2F;
+			packageReferences = (
+				464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+			);
 			productRefGroup = A67ABD202924157800726A2F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */,
 				A67ABD2C2924157A00726A2F /* Persistence.swift in Sources */,
 				A67ABD252924157800726A2F /* ContentView.swift in Sources */,
 				A67ABD2F2924157A00726A2F /* ShelterSafe.xcdatamodeld in Sources */,
@@ -429,6 +441,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ShelterSafe/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShelterSafe/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -457,6 +471,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ShelterSafe/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShelterSafe/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -587,6 +603,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		464A9B022936B18500015668 /* MapboxMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			productName = MapboxMaps;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A67ABD2D2924157A00726A2F /* ShelterSafe.xcdatamodeld */ = {
