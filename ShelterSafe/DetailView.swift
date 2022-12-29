@@ -8,12 +8,39 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    @State var results = [TaskEntry]()
+    let URL = "https://api.weather.gov/alerts/active?point="
+    
+  
+    
     var body: some View {
         
+        
+        
         VStack {
-            Text("Disaster Information")
+            ZStack {
+                Rectangle().ignoresSafeArea()
+                    .foregroundColor(.blue)
+                    .frame(height: 100)
+                    
+                HStack {
+                    VStack {
+                        Text("Disaster Status")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding(.leading, 15.0)
+                            .offset(x: 0, y: 20)
+                        
+                    }
+                    Spacer()
+                }
+            }
+                
+            
             Spacer()
-            Text("")
+            
         }
     }
 }

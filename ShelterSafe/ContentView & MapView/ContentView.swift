@@ -10,52 +10,43 @@ import UIKit
 import MapboxMaps
 import MapboxCoreMaps
 
-var CurrentScreen = ContentView()
+
 
 struct ContentView: View {
-    var toggle2details = false
-    var body: some View {
-        
-        ZStack {
-            MapBoxMapView()
-            VStack {
-                Text("ShelterSafe")
-                    .padding(.top, 3.0)
-                Spacer()
-                HStack {
-                    
-                    Spacer()
-                    
-                    Text("Button1")
-                    
-                    Spacer()
-                    
-                    Text("Button2")
-                    
-                    Spacer()
-                    
-                    Button("Disaster Details") {
-                        
-                    }
-                    
-                    Spacer()
-                } // Vstack bracket
-            } // Hstack bracket
-        } // Zstack bracket
-        
-    } // var body bracket
-} //ContentView bracket
-
-struct DetailsView: View {
-    var body: some View {
+    @State private var selectedTab = "One"
     
-    Text("test")
+    var body: some View {
+        
+        TabView(selection: $selectedTab) {
+            
+            VStack{
+                MapBoxMapView()
+            }
+                .tabItem {
+                    Label("One", systemImage: "map")
+                }.tag("One")
+            
+            Text("Toolbox")
+                .tabItem {
+                    Label("Two", systemImage: "gear")
+                }
+                .tag("Two")
+            
+            
+            
+           
+            DetailView().ignoresSafeArea()
+                .tabItem {
+                    Label("Three", systemImage: "tornado")
+                }
+        }
     }
 }
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        CurrentScreen
+    
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
+
