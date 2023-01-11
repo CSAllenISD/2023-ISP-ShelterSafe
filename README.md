@@ -10,3 +10,16 @@ PranavKrishnan05: ___________
 onikh: ___________
 
   https://www.codermerlin.com/users/onik-hoque/Digital%20Portfolio/index.html
+
+Zoe-yau: ___________
+  
+   https://www.codermerlin.com/users/zoe-yau/Digital%20Portfolio/index.html
+    
+
+ShivanshiDas
+   https://www.codermerlin.com/users/shivanshi-das/Digital%20Portfolio/index.html
+
+kripatailor: ___________
+
+  https://www.codermerlin.com/users/kripa-tailor/Digital%20Portfolio/index.html
+
