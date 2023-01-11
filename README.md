@@ -31,3 +31,7 @@ jishnud17: __________
 SrisaivikasMunagala: __________
 
   https://www.codermerlin.com/users/srisaivikas-munagala/Digital%20Portfolio/index.html
+  
+sophiaptran: __________
+
+  https://www.codermerlin.com/users/sophia-tran/Digital%20Portfolio/index.html
