@@ -39,3 +39,8 @@ SrisaivikasMunagala: __________
 sophiaptran: __________
 
   https://www.codermerlin.com/users/sophia-tran/Digital%20Portfolio/index.html
+
+omerert: __________
+
+  https://www.codermerlin.com/users/omer-erturk/Digital%20Portfolio/index.html
+  
