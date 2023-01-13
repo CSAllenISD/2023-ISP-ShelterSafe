@@ -15,7 +15,7 @@ shivangi316: ___________
 
 https://www.codermerlin.com/users/shivangi-gupta/Digital%20Portfolio/index.html
 
-Zoe-yau: ___________
+Zoe-yau: Release Engineer
   
    https://www.codermerlin.com/users/zoe-yau/Digital%20Portfolio/index.html
     
