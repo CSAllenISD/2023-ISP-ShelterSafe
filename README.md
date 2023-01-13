@@ -24,7 +24,7 @@ ShivanshiDas: ___________
   
   https://www.codermerlin.com/users/shivanshi-das/Digital%20Portfolio/index.html
 
-kripatailor: ___________
+kripatailor: QA Engineer
 
    https://www.codermerlin.com/users/kripa-tailor/Digital%20Portfolio/index.html
 
