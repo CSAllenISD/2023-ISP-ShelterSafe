@@ -25,7 +25,7 @@ kripatailor: QA Engineer
 
 https://www.codermerlin.com/users/kripa-tailor/Digital%20Portfolio/index.html
 
-jishnud17: __________
+jishnud17: Release Engineer
 
 https://www.codermerlin.com/users/srijishnu-devarapalli/Digital%20Portfolio/index.html
 
