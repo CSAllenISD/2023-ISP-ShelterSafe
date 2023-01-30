@@ -8,24 +8,27 @@
 
 import SwiftUI
 import UIKit
-import MapboxCommon
-import MapboxMaps
-import MapboxCoreMaps
+//import MapboxCommon
+//import MapboxMaps
+//import MapboxCoreMaps
 import CoreLocation
+import MapKit
 
 
 
-
+/*let locationManager = CLLocationManager()
 struct MapBoxMapView: UIViewControllerRepresentable {
     
-     
     func makeUIViewController(context: Context) -> MapViewController {
            return MapViewController()
        }
       
     func updateUIViewController(_ uiViewController: MapViewController, context: Context) {
         
+
     }
+    locationManager.delegate = self
+
 }
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, LocationPermissionsDelegate {
@@ -61,6 +64,6 @@ extension MapViewController {
     /*func locationUpdate() {
         mapView.camera.fly(to: CameraOptions(center: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585), zoom: 16), duration: 5.0)
     }*/
-    
+    */
 
 
