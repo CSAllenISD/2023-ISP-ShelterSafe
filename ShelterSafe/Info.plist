@@ -4,5 +4,10 @@
 <dict>
 	<key>MBXAccessToken</key>
 	<string>pk.eyJ1Ijoib25pa2giLCJhIjoiY2xiMWtyNG5kMDR1bTN3b2Z6NGtmbm92bSJ9.jktBy9muy0FjQvjshVeORg</string>
+    <key>NSLocationTemporaryUsageDescriptionDictionary</key>
+    <dict>
+      <key>LocationAccuracyAuthorizationDescription</key>
+      <string>Please enable precise location. Turn-by-turn directions only work when precise location data is available.</string>
+    </dict>
 </dict>
 </plist>
