@@ -13,21 +13,21 @@ import MapboxCoreMaps
 
 struct MapBoxMapView: UIViewControllerRepresentable {
      
-    func makeUIViewController(context: Context) -> MapViewController {
-           return MapViewController()
+    func makeUIViewController(context: Context) -> ViewController {
+           return ViewController()
        }
       
-    func updateUIViewController(_ uiViewController: MapViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
         
     }
 }
 
-class MapViewController: UIViewController {
+class ViewController: UIViewController {
    internal var mapView: MapView!
    override public func viewDidLoad() {
        super.viewDidLoad()
        
-      // mapView.location.delegate = self
+       mapView.location.delegate = self
        
        let myResourceOptions = ResourceOptions(accessToken: "pk.eyJ1Ijoib25pa2giLCJhIjoiY2xiMWtyNG5kMDR1bTN3b2Z6NGtmbm92bSJ9.jktBy9muy0FjQvjshVeORg")
        //let myCameraOptions = CameraOptions(center: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585), zoom: 16, pitch: 30)
@@ -43,7 +43,21 @@ class MapViewController: UIViewController {
    }
     
     
+    func requestPermissionsButtonTapped() {
+            mapView.location.requestTemporaryFullAccuracyPermissions(withPurposeKey: "CustomKey")
+        }
+    
     
 }
+
+
+extension ViewController: LocationPermissionsDelegate {
+    func locationManager(_ locationManager: LocationManager, didChangeAccuracyAuthorization accuracyAuthorization: CLAccuracyAuthorization) {
+        if accuracyAuthorization == .reducedAccuracy {
+         // Perform an action in response to the new change in accuracy
+        }
+    }
+}
+
 
 
