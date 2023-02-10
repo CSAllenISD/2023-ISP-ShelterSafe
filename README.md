@@ -5,7 +5,7 @@ PranavKrishnan05: ___________
 
 https://www.codermerlin.com/users/pranav-krishnan/Digital%20Portfolio/index.html
 
-onikh: Project Manager
+onikh: Project Manager, Software Engineer
 
 https://www.codermerlin.com/users/onik-hoque/Digital%20Portfolio/index.html
 
