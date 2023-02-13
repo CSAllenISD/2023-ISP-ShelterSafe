@@ -9,7 +9,7 @@ onikh: Project Manager, Software Engineer
 
 https://www.codermerlin.com/users/onik-hoque/Digital%20Portfolio/index.html
 
-shivangi316: ___________
+shivangi316: Software Enginner
 
 https://www.codermerlin.com/users/shivangi-gupta/Digital%20Portfolio/index.html
 
@@ -37,6 +37,6 @@ sophiaptran: QA Engineer
 
 https://www.codermerlin.com/users/sophia-tran/Digital%20Portfolio/index.html
 
-omerert: __________
+omerert: Software Engineer
 
 https://www.codermerlin.com/users/omer-erturk/Digital%20Portfolio/index.html
