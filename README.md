@@ -1,7 +1,7 @@
 # 2023-ISP-ShelterSafe
 Team Members
 
-PranavKrishnan05: QA Engineer
+PranavKrishnan05: Software Engineer
 
 https://www.codermerlin.com/users/pranav-krishnan/Digital%20Portfolio/index.html
 
@@ -13,7 +13,7 @@ shivangi316: Software Enginner
 
 https://www.codermerlin.com/users/shivangi-gupta/Digital%20Portfolio/index.html
 
-Zoe-yau: Software Engineer
+Zoe-yau: QA Engineer
 
 https://www.codermerlin.com/users/zoe-yau/Digital%20Portfolio/index.html
 
