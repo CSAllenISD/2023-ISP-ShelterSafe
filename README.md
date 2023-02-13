@@ -13,11 +13,11 @@ shivangi316: ___________
 
 https://www.codermerlin.com/users/shivangi-gupta/Digital%20Portfolio/index.html
 
-Zoe-yau: Release Engineer
+Zoe-yau: Software Engineer
 
 https://www.codermerlin.com/users/zoe-yau/Digital%20Portfolio/index.html
 
-ShivanshiDas: ___________
+ShivanshiDas: Software Engineer
 
 https://www.codermerlin.com/users/shivanshi-das/Digital%20Portfolio/index.html
 
@@ -33,7 +33,7 @@ SrisaivikasMunagala: Product Manager
 
 https://www.codermerlin.com/users/srisaivikas-munagala/Digital%20Portfolio/index.html
 
-sophiaptran: __________
+sophiaptran: QA Engineer
 
 https://www.codermerlin.com/users/sophia-tran/Digital%20Portfolio/index.html
 
