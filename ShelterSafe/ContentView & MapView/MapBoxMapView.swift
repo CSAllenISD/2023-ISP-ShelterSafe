@@ -40,6 +40,8 @@ class ViewController: UIViewController {
        mapView.location.delegate = self
        mapView.location.options.puckType = .puck2D()
        
+
+       
        
        
        
@@ -58,11 +60,14 @@ class ViewController: UIViewController {
 
 
 extension ViewController: LocationPermissionsDelegate {
+    
     func locationManager(_ locationManager: LocationManager, didChangeAccuracyAuthorization accuracyAuthorization: CLAccuracyAuthorization) {
         if accuracyAuthorization == .reducedAccuracy {
          // Perform an action in response to the new change in accuracy
         }
     }
+    
+    
 }
 
 

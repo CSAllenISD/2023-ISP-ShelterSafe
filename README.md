@@ -1,7 +1,7 @@
 # 2023-ISP-ShelterSafe
 Team Members
 
-PranavKrishnan05: ___________
+PranavKrishnan05: QA Engineer
 
 https://www.codermerlin.com/users/pranav-krishnan/Digital%20Portfolio/index.html
 
@@ -29,7 +29,7 @@ jishnud17: Release Engineer
 
 https://www.codermerlin.com/users/srijishnu-devarapalli/Digital%20Portfolio/index.html
 
-SrisaivikasMunagala: __________
+SrisaivikasMunagala: Product Manager
 
 https://www.codermerlin.com/users/srisaivikas-munagala/Digital%20Portfolio/index.html
 
