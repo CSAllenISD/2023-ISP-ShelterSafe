@@ -25,7 +25,7 @@ struct ContentView: View {
     var body: some View {
         
         TabView(selection: $selectedTab) {
-            
+
             VStack{
                Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
                     .ignoresSafeArea()
@@ -51,6 +51,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Three", systemImage: "tornado")
                 }
+            
         }
     }
 }
