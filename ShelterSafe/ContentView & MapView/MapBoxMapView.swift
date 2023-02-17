@@ -9,6 +9,7 @@ import SwiftUI
 import MapboxCommon
 import MapboxMaps
 import MapboxCoreMaps
+import CoreLocation
 
 struct MapBoxMapView: UIViewControllerRepresentable {
      
@@ -21,18 +22,29 @@ struct MapBoxMapView: UIViewControllerRepresentable {
     }
 }
 
-class ViewController: UIViewController {
-   internal var mapView: MapView!
+class ViewController: UIViewController, CLLocationManagerDelegate {
+   private var mapView: MapView!
    override public func viewDidLoad() {
        super.viewDidLoad()
        
+       let locationManager = CLLocationManager()
        
+       // For use in foreground
+       //self.locationManager.requestWhenInUseAuthorization()
+       locationManager.requestWhenInUseAuthorization()
+
+       if CLLocationManager.locationServicesEnabled() {
+           locationManager.delegate = self
+           locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+           locationManager.startUpdatingLocation()
+       }
        
        let myResourceOptions = ResourceOptions(accessToken: "pk.eyJ1Ijoib25pa2giLCJhIjoiY2xiMWtyNG5kMDR1bTN3b2Z6NGtmbm92bSJ9.jktBy9muy0FjQvjshVeORg")
-       //let myCameraOptions = CameraOptions(center: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585), zoom: 16, pitch: 30)
-       //let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions, cameraOptions: myCameraOptions)
        
+       //let myCameraOptions = CameraOptions(center: locationManager.location?.coordinate, zoom: 16, pitch: 45)
        let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions)
+       
+       //let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions, cameraOptions: myCameraOptions)
        
        
        mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
@@ -40,7 +52,7 @@ class ViewController: UIViewController {
        mapView.location.delegate = self
        mapView.location.options.puckType = .puck2D()
        
-
+       
        
        
        
@@ -48,6 +60,10 @@ class ViewController: UIViewController {
        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
        self.view.addSubview(mapView)
       // var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
+       mapView.mapboxMap.onNext(event: .mapLoaded) { _ in
+           
+           self.mapView.camera.fly(to: CameraOptions(center: locationManager.location?.coordinate, zoom: 16, pitch: 45), duration: 2.0)
+       }
    }
     
     
@@ -63,7 +79,7 @@ extension ViewController: LocationPermissionsDelegate {
     
     func locationManager(_ locationManager: LocationManager, didChangeAccuracyAuthorization accuracyAuthorization: CLAccuracyAuthorization) {
         if accuracyAuthorization == .reducedAccuracy {
-         // Perform an action in response to the new change in accuracy
+            // Perform an action in response to the new change in accuracy
         }
     }
     

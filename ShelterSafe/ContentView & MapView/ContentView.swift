@@ -37,7 +37,8 @@ struct ContentView: View {
             DetailView().ignoresSafeArea()
                 .tabItem {
                     Label("Three", systemImage: "tornado")
-                }
+                }.tint(Color.yellow)
+                
         }
     }
 }
