@@ -21,6 +21,7 @@ struct MapBoxMapView: UIViewControllerRepresentable {
     }
 }
 
+
 class ViewController: UIViewController {
    internal var mapView: MapView!
    override public func viewDidLoad() {

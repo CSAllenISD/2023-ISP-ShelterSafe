@@ -15,11 +15,14 @@ struct ContentView: View {
     @State private var selectedTab = "One"
     
     var body: some View {
+  
+                   
         
         TabView(selection: $selectedTab) {
 
             VStack{
                 MapBoxMapView()
+                    .edgesIgnoringSafeArea(.top)
             }
                 .tabItem {
                     Label("One", systemImage: "map")
@@ -30,13 +33,16 @@ struct ContentView: View {
                     Label("Two", systemImage: "gear")
                 }
                 .tag("Two")
-            
+        
+                //.edgesIgnoringSafeArea(.top) // this will ignore the top spacing
+                //.frame(height: 300.0)
             
             
            
             DetailView().ignoresSafeArea()
                 .tabItem {
                     Label("Three", systemImage: "tornado")
+                
                 }
             
         }
@@ -49,4 +55,5 @@ struct ContentView: View {
             ContentView()
         }
     }
+
 
