@@ -5,7 +5,7 @@ PranavKrishnan05: Software Engineer
 
 https://www.codermerlin.com/users/pranav-krishnan/Digital%20Portfolio/index.html
 
-onikh: Project Manager
+onikh: Project Manager, Software Engineer
 
 https://www.codermerlin.com/users/onik-hoque/Digital%20Portfolio/index.html
 
@@ -13,7 +13,7 @@ shivangi316: Software Engineer
 
 https://www.codermerlin.com/users/shivangi-gupta/Digital%20Portfolio/index.html
 
-Zoe-yau: Release Engineer
+Zoe-yau: QA Engineer
 
 https://www.codermerlin.com/users/zoe-yau/Digital%20Portfolio/index.html
 
@@ -33,11 +33,19 @@ SrisaivikasMunagala: Product Manager
 
 https://www.codermerlin.com/users/srisaivikas-munagala/Digital%20Portfolio/index.html
 
+<<<<<<< HEAD
 sophiaptran: QA Engineer 
 
 https://www.codermerlin.com/users/sophia-tran/Digital%20Portfolio/index.html
 
 omerert: Software Engineer 
+=======
+sophiaptran: QA Engineer
+
+https://www.codermerlin.com/users/sophia-tran/Digital%20Portfolio/index.html
+
+omerert: Software Engineer
+>>>>>>> 9ebe0ae5772dfc36b7a9bcc34eec89f12c5bdffb
 
 https://www.codermerlin.com/users/omer-erturk/Digital%20Portfolio/index.html
 
