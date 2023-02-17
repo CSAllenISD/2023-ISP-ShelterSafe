@@ -20,6 +20,7 @@ struct ContentView: View {
 
             VStack{
                 MapBoxMapView()
+                .edgesIgnoringSafeArea(.top)
             }
                 .tabItem {
                     Label("One", systemImage: "map")
