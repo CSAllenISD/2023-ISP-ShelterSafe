@@ -37,7 +37,7 @@ sophiaptran: QA Engineer
 
 https://www.codermerlin.com/users/sophia-tran/Digital%20Portfolio/index.html
 
-omerert: QA Engineer 
+omerert: Software Engineer 
 
 https://www.codermerlin.com/users/omer-erturk/Digital%20Portfolio/index.html
 
