@@ -27,6 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
    override public func viewDidLoad() {
        super.viewDidLoad()
        
+       
        let locationManager = CLLocationManager()
        
        // For use in foreground
