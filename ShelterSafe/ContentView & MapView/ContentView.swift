@@ -19,8 +19,7 @@ struct ContentView: View {
         TabView(selection: $selectedTab) {
             
             VStack{
-                MapBoxMapView().edgesIgnoringSafeArea(.top)
-
+                MapBoxMapView()
             }
                 .tabItem {
                     Label("One", systemImage: "map")
@@ -32,7 +31,6 @@ struct ContentView: View {
                 }
                 .tag("Two")
             
-
             
             
            
