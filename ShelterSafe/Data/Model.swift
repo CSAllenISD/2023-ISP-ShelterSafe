@@ -9,8 +9,8 @@ import Foundation
 
 
 
-struct TaskEntry: Codable {
-    let id: Int
-    let title: String
-    let completed: Bool
+struct User: Codable {
+    let id : Int
+    let username : String
+    let name : String
 }

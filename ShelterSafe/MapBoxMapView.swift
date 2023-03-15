@@ -56,9 +56,15 @@ class ViewController: UIViewController {
        
        
        //POINT ANNOTATIONS
+       let pointAnnotationArray = [PointAnnotation]()
+ 
+       
+       
        var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
        
        pointAnnotation.image = .init(image: UIImage(named: "Image.png")!, name: "Image.png")
+       
+       pointAnnotation.iconSize = 0.15
        
        let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
        pointAnnotationManager.annotations = [pointAnnotation]

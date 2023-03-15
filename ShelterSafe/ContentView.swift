@@ -25,7 +25,7 @@ struct ContentView: View {
                     Label("One", systemImage: "map")
                 }.tag("One")
             
-            Text("Toolbox")
+            ToolBoxView()
                 .tabItem {
                     Label("Two", systemImage: "gear")
                 }
@@ -34,7 +34,8 @@ struct ContentView: View {
             
             
            
-            DetailView().ignoresSafeArea()
+            //DetailView().ignoresSafeArea()
+            Text("placeholder")
                 .tabItem {
                     Label("Three", systemImage: "tornado")
                 }
