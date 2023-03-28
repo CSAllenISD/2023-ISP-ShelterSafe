@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//this is the model file
 
 struct User: Codable {
     let id : Int

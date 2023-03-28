@@ -8,9 +8,15 @@
 import Foundation
 import UIKit
 import SwiftUI
+import CoreLocation
+import CoreLocationUI
 
+//u can make similar functions to "getUsers" for different apis using different model files. this is the controller file
 
 class RawData {
+    
+    
+    
     func getUsers(completion:@escaping ([User]) -> ()) {
             guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
         
