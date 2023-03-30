@@ -60,11 +60,11 @@ class RawData {
             .resume()
         } */
     
-    func getAlerts(completion:@escaping ([NWSAlert]) -> ()) {
-            guard let url = URL(string: "https://api.weather.gov/alerts/active?area=RI") else { return }
+    func getAlerts(completion:@escaping (NWSAlert) -> ()) {
+            guard let url = URL(string: "https://api.weather.gov/alerts/active?area=WV") else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
-                let alert = try! JSONDecoder().decode([NWSAlert].self, from: data!)
+                let alert = try! JSONDecoder().decode(NWSAlert.self, from: data!)
                // let features = alert.features
         
                 

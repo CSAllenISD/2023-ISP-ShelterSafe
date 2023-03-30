@@ -14,21 +14,17 @@ import SwiftUI
 struct ToolBoxView: View {
     
     @EnvironmentObject var locationManager : LocationManager
-    @State var alerts : [NWSAlert] = []
+    @State var alerts : NWSAlert = NWSAlert(type: "")
     @State var users : [User] = []
     
     var userLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }
     var userLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)" }
     
     var body: some View {
-         List(users, id: \.id) { alert in
-             Text(alert.name)
-             
-         }
+        Text(alerts.type)
          .onAppear {
-             RawData().getUsers { fetchedUsers in
-                 print(fetchedUsers.description)
-                 self.users = fetchedUsers
+             RawData().getAlerts { fetchedUsers in
+                 self.alerts = fetchedUsers
              }
          }
      }
