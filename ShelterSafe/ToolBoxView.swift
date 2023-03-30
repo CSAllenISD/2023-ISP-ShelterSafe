@@ -14,7 +14,7 @@ import SwiftUI
 struct ToolBoxView: View {
     
     @EnvironmentObject var locationManager : LocationManager
-    @State var alerts : [NWSAlertFeature] = []
+    @State var alerts : [NWSAlert] = []
     @State var users : [User] = []
     
     var userLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }

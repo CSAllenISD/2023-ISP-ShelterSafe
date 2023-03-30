@@ -45,7 +45,7 @@ class RawData {
             .resume()
         }
     
-    func getAlerts(completion:@escaping ([NWSAlertFeature]) -> ()) {
+  /*  func getAlerts(completion:@escaping ([NWSAlertFeature]) -> ()) {
             guard let url = URL(string: "https://api.weather.gov/alerts/active?area=NY") else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -55,6 +55,21 @@ class RawData {
                 
                 DispatchQueue.main.async {
                     completion(features)
+                }
+            }
+            .resume()
+        } */
+    
+    func getAlerts(completion:@escaping ([NWSAlert]) -> ()) {
+            guard let url = URL(string: "https://api.weather.gov/alerts/active?area=RI") else { return }
+        
+            URLSession.shared.dataTask(with: url) { (data, _, _) in
+                let alert = try! JSONDecoder().decode([NWSAlert].self, from: data!)
+               // let features = alert.features
+        
+                
+                DispatchQueue.main.async {
+                    completion(alert)
                 }
             }
             .resume()
