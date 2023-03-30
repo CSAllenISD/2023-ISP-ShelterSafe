@@ -7,55 +7,36 @@
 
 import Foundation
 import SwiftUI
-import CoreLocation
+
 
 //this is the view file
 
-struct ToolBoxView : View {
+struct ToolBoxView: View {
     
+    @EnvironmentObject var locationManager : LocationManager
+    @State var alerts : [NWSAlertFeature] = []
     @State var users : [User] = []
     
-    var body : some View {
-        Text("hi")
-            .onAppear() {
-                RawData().getUsers { (users) in
-                    self.users = users
-                    for user in users {
-                        print(user.name)
-                    }
-                }
-            }.padding()
-    }
-
+    var userLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }
+    var userLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)" }
+    
+    var body: some View {
+         List(users, id: \.id) { alert in
+             Text(alert.name)
+             
+         }
+         .onAppear {
+             RawData().getUsers { fetchedUsers in
+                 print(fetchedUsers.description)
+                 self.users = fetchedUsers
+             }
+         }
+     }
+    
 }
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    
-    private let locationManager = CLLocationManager()
-    @Published var locationStatus : CLAuthorizationStatus?
-    @Published var lastLocation : CLLocation?
-    
-    override init() {
-        super.init()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+struct MyView_Previews: PreviewProvider {
+    static var previews: some View {
+        ToolBoxView().environmentObject(LocationManager())
     }
-
-    
-    var statusString : String {
-        guard let status = locationStatus else {
-            return "unknown"
-        }
-        //WORK HERE!!!!!!!!!!!!!!!!
-        switch status {
-            case
-        }
-        
-        
-        
-    }
-
 }
-

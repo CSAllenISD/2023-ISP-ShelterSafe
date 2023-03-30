@@ -15,6 +15,20 @@ import CoreLocationUI
 
 class RawData {
     
+    @EnvironmentObject var locationManager : LocationManager
+    
+    var userLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }
+    var userLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)" }
+    
+    
+    
+
+    
+    
+    func getLink() -> String {
+        return "https://api.weather.gov/alerts/active?point=\(userLatitude),\(userLongitude)"
+    }
+    
     
     
     func getUsers(completion:@escaping ([User]) -> ()) {
@@ -30,7 +44,72 @@ class RawData {
             }
             .resume()
         }
+    
+    func getAlerts(completion:@escaping ([NWSAlertFeature]) -> ()) {
+            guard let url = URL(string: "https://api.weather.gov/alerts/active?area=NY") else { return }
+        
+            URLSession.shared.dataTask(with: url) { (data, _, _) in
+                let alert = try! JSONDecoder().decode(NWSAlert.self, from: data!)
+                let features = alert.features
+        
+                
+                DispatchQueue.main.async {
+                    completion(features)
+                }
+            }
+            .resume()
+        }
+    
+    
+    
 
+
+}
+
+
+
+
+class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+
+    private let locationManager = CLLocationManager()
+    @Published var locationStatus: CLAuthorizationStatus?
+    @Published var lastLocation: CLLocation?
+
+    override init() {
+        super.init()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+
+   
+    
+    var statusString: String {
+        guard let status = locationStatus else {
+            return "unknown"
+        }
+        
+        switch status {
+        case .notDetermined: return "notDetermined"
+        case .authorizedWhenInUse: return "authorizedWhenInUse"
+        case .authorizedAlways: return "authorizedAlways"
+        case .restricted: return "restricted"
+        case .denied: return "denied"
+        default: return "unknown"
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        locationStatus = status
+        print(#function, statusString)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        lastLocation = location
+        print(#function, location)
+    }
 }
 
 

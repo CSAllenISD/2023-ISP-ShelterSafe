@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4610816F29D4019200ADE069 /* NWS_API_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610816E29D4019200ADE069 /* NWS_API_Model.swift */; };
+		4610817129D526B900ADE069 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610817029D526B900ADE069 /* TestView.swift */; };
 		461BE59C295D7011005EB14F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BE59B295D7011005EB14F /* Model.swift */; };
 		464A9B032936B18500015668 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 464A9B022936B18500015668 /* MapboxMaps */; };
 		464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B042936B24400015668 /* MapBoxMapView.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4610816E29D4019200ADE069 /* NWS_API_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWS_API_Model.swift; sourceTree = "<group>"; };
+		4610817029D526B900ADE069 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		461BE59B295D7011005EB14F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		464A9B042936B24400015668 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		464A9B062937173E00015668 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				461BE59B295D7011005EB14F /* Model.swift */,
+				4610816E29D4019200ADE069 /* NWS_API_Model.swift */,
 				A6341E5729C24E1F009A6D88 /* RawData.swift */,
 			);
 			path = Data;
@@ -124,6 +129,7 @@
 				464A9B062937173E00015668 /* DetailView.swift */,
 				A6341E5629C24DCD009A6D88 /* Data */,
 				464A9B09295D6E1200015668 /* ToolBoxView.swift */,
+				4610817029D526B900ADE069 /* TestView.swift */,
 				464A9B042936B24400015668 /* MapBoxMapView.swift */,
 				A67ABD242924157800726A2F /* ContentView.swift */,
 				A67ABD262924157A00726A2F /* Assets.xcassets */,
@@ -297,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6341E5829C24E1F009A6D88 /* RawData.swift in Sources */,
+				4610816F29D4019200ADE069 /* NWS_API_Model.swift in Sources */,
+				4610817129D526B900ADE069 /* TestView.swift in Sources */,
 				464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */,
 				464A9B072937173E00015668 /* DetailView.swift in Sources */,
 				A67ABD2C2924157A00726A2F /* Persistence.swift in Sources */,
