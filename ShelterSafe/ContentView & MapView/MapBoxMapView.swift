@@ -60,10 +60,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
        
        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
        self.view.addSubview(mapView)
-      // var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
+       
+       var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
        mapView.mapboxMap.onNext(event: .mapLoaded) { _ in
            
            self.mapView.camera.fly(to: CameraOptions(center: locationManager.location?.coordinate, zoom: 16, pitch: 45), duration: 2.0)
+           
+           // Make the annotation show a red pin
+           pointAnnotation.image = .init(image: UIImage(named: "red_pin")!, name: "red_pin")
+           pointAnnotation.iconAnchor = .bottom
+           
+           // Create the `PointAnnotationManager` which will be responsible for handling this annotation
+           let pointAnnotationManager = self.mapView.annotations.makePointAnnotationManager()
+
+           // Add the annotation to the manager in order to render it on the map.
+           pointAnnotationManager.annotations = [pointAnnotation]
        }
    }
     
