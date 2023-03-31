@@ -61,6 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
        self.view.addSubview(mapView)
        
+<<<<<<< HEAD:ShelterSafe/ContentView & MapView/MapBoxMapView.swift
        var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
        mapView.mapboxMap.onNext(event: .mapLoaded) { _ in
            
@@ -75,6 +76,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
            // Add the annotation to the manager in order to render it on the map.
            pointAnnotationManager.annotations = [pointAnnotation]
+=======
+       
+       //POINT ANNOTATIONS
+       let pointAnnotationArray = [PointAnnotation]()
+ 
+       
+       
+       var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
+       
+       pointAnnotation.image = .init(image: UIImage(named: "Image.png")!, name: "Image.png")
+       
+       pointAnnotation.iconSize = 0.15
+       
+       let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
+       pointAnnotationManager.annotations = [pointAnnotation]
+       
+       
+       
+       if let locationCoordinate = self.mapView?.location.latestLocation?.coordinate {
+           mapView.mapboxMap.setCamera(to: CameraOptions(center: locationCoordinate, zoom: 15))
+           print("TEST")
+>>>>>>> onikCommits:ShelterSafe/MapBoxMapView.swift
        }
    }
     
