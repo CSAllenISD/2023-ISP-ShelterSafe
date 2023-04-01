@@ -53,22 +53,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
        mapView.location.delegate = self
        mapView.location.options.puckType = .puck2D()
        
+      
        
        
+       
+
+     
        
        
        
        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
        self.view.addSubview(mapView)
+<<<<<<< HEAD:ShelterSafe/ContentView & MapView/MapBoxMapView.swift
+       let coordinate = CLLocationCoordinate2DMake(32.7767, -96.7970)
+       var pointAnnotation = PointAnnotation(coordinate: coordinate)
+               pointAnnotation.image = .init(image: UIImage(named: "red_pin")!, name: "red_pin")
+=======
        
 <<<<<<< HEAD:ShelterSafe/ContentView & MapView/MapBoxMapView.swift
        var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
+>>>>>>> main:ShelterSafe/MapBoxMapView.swift
        mapView.mapboxMap.onNext(event: .mapLoaded) { _ in
            
            self.mapView.camera.fly(to: CameraOptions(center: locationManager.location?.coordinate, zoom: 16, pitch: 45), duration: 2.0)
            
-           // Make the annotation show a red pin
-           pointAnnotation.image = .init(image: UIImage(named: "red_pin")!, name: "red_pin")
+       
+       
+       // Make the annotation show a red pin
            pointAnnotation.iconAnchor = .bottom
            
            // Create the `PointAnnotationManager` which will be responsible for handling this annotation
@@ -108,7 +119,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
 }
-
+extension ViewController: AnnotationInteractionDelegate {
+    public func annotationManager(_ manager: AnnotationManager, didDetectTappedAnnotations annotations: [Annotation]) {
+        print("Annotations tapped: \(annotations)")
+    }
+}
 
 extension ViewController: LocationPermissionsDelegate {
     
