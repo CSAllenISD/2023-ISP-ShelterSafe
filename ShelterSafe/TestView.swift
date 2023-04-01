@@ -1,38 +1,42 @@
 //
-//  ToolBoxView.swift
+//  TestView.swift
 //  ShelterSafe
 //
-//  Created by Onik Houqe on 12/28/22.
+//  Created by Onik Houqe on 3/29/23.
 //
-
 import Foundation
 import SwiftUI
 
 
 //this is the view file
 
-struct ToolBoxView: View {
+struct TestView: View {
     
     @EnvironmentObject var locationManager : LocationManager
-    @State var alerts : NWSAlert = NWSAlert(type: "")
+    @State var alerts : [NWSAlert] = []
     @State var users : [User] = []
     
     var userLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }
     var userLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)" }
     
     var body: some View {
-        Text(alerts.type)
+         List(users, id: \.id) { alert in
+             Text(alert.name)
+             
+         }
          .onAppear {
-             RawData().getAlerts { fetchedUsers in
-                 self.alerts = fetchedUsers
+             RawData().getUsers { fetchedUsers in
+                 print(fetchedUsers.description)
+                 self.users = fetchedUsers
              }
          }
      }
     
 }
 
-struct MyView_Previews: PreviewProvider {
+struct TestView_Previews: PreviewProvider {
     static var previews: some View {
-        ToolBoxView().environmentObject(LocationManager())
+        TestView().environmentObject(LocationManager())
     }
 }
+
