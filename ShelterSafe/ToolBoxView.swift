@@ -28,19 +28,35 @@ struct ToolBoxView: View {
     
     var body: some View {
         VStack {
-            List(alerts, id: \.id) { alert in
-                Text(alert.properties.headline)
-                
-            }
-            .onAppear {
-                RawData().getAlerts(url: "https://api.weather.gov/alerts/active?point=\(latitude),\(longitude)") { fetchedUsers in
-                    self.alerts = fetchedUsers
+            Text("Disaster Details")
+            NavigationView {
+                List {
+                    ForEach(alerts, id: \.id) { alert in
+                        NavigationLink(destination: Text(alert.properties.headline)) { Text(alert.properties.event)
+                    }
                 }
+            }
+
+                }
+            .onAppear {
+                    RawData().getAlerts(url: "https://api.weather.gov/alerts/active?point=\(latitude),\(longitude)") { fetchedUsers in
+                        self.alerts = fetchedUsers
+                    }
+
         }
         }
         
     }
     
+}
+
+struct DisasterDetailView : View {
+    let details : String
+  //  let
+    
+    var body : some View {
+        Text("test")
+    }
 }
 
 struct MyView_Previews: PreviewProvider {
