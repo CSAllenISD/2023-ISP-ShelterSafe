@@ -9,16 +9,16 @@ import Foundation
 
 struct NWSAlert: Codable {
     let type: String
-    //let features: [NWSAlertFeature]
-   // let title: String
-   // let updated: String
+    let features: [NWSAlertFeature]
+    let title: String
+    let updated: String
 }
-/*
+
 struct NWSAlertFeature: Codable {
     let id : String
     let type: String
   //  let geometry: NWSAlertGeometry
-  //  let properties: NWSAlertProperties
+    let properties: NWSAlertProperties
 }
 
 struct NWSAlertGeometry: Codable {
@@ -29,19 +29,19 @@ struct NWSAlertGeometry: Codable {
 struct NWSAlertProperties: Codable {
     let event: String
     let severity: String
-    let certainty: String
+//    let certainty: String
     let headline: String
-    let description: String
-    let instruction: String
-    let expires: String
-    let sent: String
+//    let description: String
+//    let instruction: String
+//    let expires: String
+//    let sent: String
     let areaDesc: String
-    let geocode: NWSAlertGeocode
+//    let geocode: NWSAlertGeocode
 }
 
 struct NWSAlertGeocode: Codable {
     let same: [String]?
     let ugc: [String]?
 }
-*/
+
 

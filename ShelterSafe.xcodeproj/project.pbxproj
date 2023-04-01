@@ -98,9 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				461BE59B295D7011005EB14F /* Model.swift */,
-				4610816E29D4019200ADE069 /* NWS_API_Model.swift */,
 				A6E99F7329D5F7090039C880 /* ShelterModel.swift */,
 				A6341E5729C24E1F009A6D88 /* RawData.swift */,
+				4610816E29D4019200ADE069 /* NWS_API_Model.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";

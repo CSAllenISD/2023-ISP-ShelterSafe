@@ -60,16 +60,30 @@ class RawData {
             .resume()
         } */
     
-    func getAlerts(completion:@escaping (NWSAlert) -> ()) {
-            guard let url = URL(string: "https://api.weather.gov/alerts/active?area=WV") else { return }
+    func getAlerts(url: String, completion:@escaping ([NWSAlertFeature]) -> ()) {
+            guard let url = URL(string: url) else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
                 let alert = try! JSONDecoder().decode(NWSAlert.self, from: data!)
-               // let features = alert.features
+                let features = alert.features
         
                 
                 DispatchQueue.main.async {
-                    completion(alert)
+                    completion(features)
+                }
+            }
+            .resume()
+        }
+    
+    
+    func getShelters( completion:@escaping ([Shelter]) -> ()) {
+            guard let url = URL(string: "https://www.codermerlin.academy/users/onik-hoque/Digital%20Portfolio/CS-II/Projects/ISP/features.json") else { return }
+        
+            URLSession.shared.dataTask(with: url) { (data, _, _) in
+                let shelters = try! JSONDecoder().decode([Shelter].self, from: data!)
+                
+                DispatchQueue.main.async {
+                    completion(shelters)
                 }
             }
             .resume()
