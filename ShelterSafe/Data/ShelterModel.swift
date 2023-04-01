@@ -10,7 +10,7 @@ import Foundation
 struct Shelter: Codable {
     let id : Int
     let name : String
-    let properties : ShelterProperties
+ //   let properties : ShelterProperties
     let latitude : Double
     let longitude : Double
     

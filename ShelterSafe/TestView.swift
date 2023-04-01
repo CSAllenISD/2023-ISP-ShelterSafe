@@ -25,7 +25,7 @@ struct TestView: View {
              
          }
          .onAppear {
-             RawData().getShelters { fetchedShelters in
+             RawData.getShelters { fetchedShelters in
                  self.shelters = fetchedShelters
              }
          }

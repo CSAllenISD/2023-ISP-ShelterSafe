@@ -11,6 +11,7 @@ import MapboxCommon
 import MapboxMaps
 import MapboxCoreMaps
 
+
 struct MapBoxMapView: UIViewControllerRepresentable {
      
     func makeUIViewController(context: Context) -> ViewController {
@@ -24,10 +25,17 @@ struct MapBoxMapView: UIViewControllerRepresentable {
 
 class ViewController: UIViewController {
    internal var mapView: MapView!
+    var shelters : [Shelter] = []
+    
+ 
     
     
    override public func viewDidLoad() {
        super.viewDidLoad()
+       
+       RawData.getShelters { fetchedShelters in
+           self.shelters = fetchedShelters
+       }
        
        
        
@@ -57,7 +65,11 @@ class ViewController: UIViewController {
        
        
        //POINT ANNOTATIONS
-       let pointAnnotationArray = [PointAnnotation]()
+       var pointAnnotationArray = [PointAnnotation]()
+       
+       for shelter in shelters {
+           pointAnnotationArray.append(PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: shelter.latitude, longitude: shelter.longitude)))
+       }
  
        
        

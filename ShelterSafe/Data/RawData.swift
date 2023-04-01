@@ -31,7 +31,7 @@ class RawData {
     
     
     
-    func getUsers(completion:@escaping ([User]) -> ()) {
+    static func getUsers(completion:@escaping ([User]) -> ()) {
             guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -60,7 +60,7 @@ class RawData {
             .resume()
         } */
     
-    func getAlerts(url: String, completion:@escaping ([NWSAlertFeature]) -> ()) {
+    static func getAlerts(url: String, completion:@escaping ([NWSAlertFeature]) -> ()) {
             guard let url = URL(string: url) else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -76,7 +76,7 @@ class RawData {
         }
     
     
-    func getShelters( completion:@escaping ([Shelter]) -> ()) {
+    static func getShelters( completion:@escaping ([Shelter]) -> ()) {
             guard let url = URL(string: "https://www.codermerlin.academy/users/onik-hoque/Digital%20Portfolio/CS-II/Projects/ISP/features.json") else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
