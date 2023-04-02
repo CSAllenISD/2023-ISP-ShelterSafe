@@ -9,16 +9,21 @@ import SwiftUI
 
 struct HomePageView: View {
     var body: some View {
-        Text("Home Page")
+        ZStack {
+            Color.blue
+                .ignoresSafeArea()
+            
+            VStack {
+                ProgressView()
+                    .padding()
+                
+                Text("Loading...")
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .fontWeight(.bold)
+            }
+        }
     }
- 
 }
-
-struct HomePageView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePageView()
-    }
-}
-
 
 
