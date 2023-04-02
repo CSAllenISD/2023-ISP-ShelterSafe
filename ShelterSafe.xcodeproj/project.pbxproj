@@ -14,6 +14,7 @@
 		464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B042936B24400015668 /* MapBoxMapView.swift */; };
 		464A9B072937173E00015668 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B062937173E00015668 /* DetailView.swift */; };
 		464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B09295D6E1200015668 /* ToolBoxView.swift */; };
+		968E264329DA44C200F40B67 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E264229DA44C200F40B67 /* LoginView.swift */; };
 		A6341E5829C24E1F009A6D88 /* RawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6341E5729C24E1F009A6D88 /* RawData.swift */; };
 		A67ABD232924157800726A2F /* ShelterSafeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD222924157800726A2F /* ShelterSafeApp.swift */; };
 		A67ABD252924157800726A2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD242924157800726A2F /* ContentView.swift */; };
@@ -52,6 +53,7 @@
 		464A9B042936B24400015668 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		464A9B062937173E00015668 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		464A9B09295D6E1200015668 /* ToolBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBoxView.swift; sourceTree = "<group>"; };
+		968E264229DA44C200F40B67 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A6341E5729C24E1F009A6D88 /* RawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawData.swift; sourceTree = "<group>"; };
 		A67ABD1F2924157800726A2F /* ShelterSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelterSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67ABD222924157800726A2F /* ShelterSafeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeApp.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				A6341E5629C24DCD009A6D88 /* Data */,
 				ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */,
 				464A9B09295D6E1200015668 /* ToolBoxView.swift */,
+				968E264229DA44C200F40B67 /* LoginView.swift */,
 				4610817029D526B900ADE069 /* TestView.swift */,
 				464A9B042936B24400015668 /* MapBoxMapView.swift */,
 				A67ABD242924157800726A2F /* ContentView.swift */,
@@ -316,6 +319,7 @@
 				464A9B072937173E00015668 /* DetailView.swift in Sources */,
 				A67ABD2C2924157A00726A2F /* Persistence.swift in Sources */,
 				A67ABD252924157800726A2F /* ContentView.swift in Sources */,
+				968E264329DA44C200F40B67 /* LoginView.swift in Sources */,
 				A67ABD2F2924157A00726A2F /* ShelterSafe.xcdatamodeld in Sources */,
 				464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */,
 				A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */,
