@@ -9,8 +9,9 @@ import SwiftUI
 
 struct HomePageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Home Page")
     }
+ 
 }
 
 struct HomePageView_Previews: PreviewProvider {
@@ -18,3 +19,6 @@ struct HomePageView_Previews: PreviewProvider {
         HomePageView()
     }
 }
+
+
+

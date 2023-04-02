@@ -41,7 +41,7 @@ struct ContentView: View {
             
             HomePageView()
                 .tabItem {
-                    Label("Home Page", systemImage: "gear")
+                    Label("Home Page", systemImage: "house")
                 }
                 .tag("Home Page")
 
