@@ -10,8 +10,11 @@ import SwiftUI
 struct HomePageView: View {
     var body: some View {
         Text("Home Page")
+
     }
- 
+    
+
+
 }
 
 struct HomePageView_Previews: PreviewProvider {
