@@ -23,26 +23,31 @@ struct ContentView: View {
 
             }
                 .tabItem {
-                    Label("One", systemImage: "map")
-                }.tag("One")
+                    Label("Map", systemImage: "map")
+                }.tag("Map")
             
             ToolBoxView()
                 .tabItem {
-                    Label("Two", systemImage: "gear")
+                    Label("Settings", systemImage: "gear")
                 }
-                .tag("Two")
-            
+                .tag("Settings")
 
-            
-            
            
             //DetailView().ignoresSafeArea()
             Text("placeholder")
                 .tabItem {
-                    Label("Three", systemImage: "tornado")
+                    Label("Weather Watch", systemImage: "tornado")
                 }.tint(Color.yellow)
+            
+            HomePageView()
+                .tabItem {
+                    Label("Home Page", systemImage: "gear")
+                }
+                .tag("Home Page")
+
                 
         }
+        
     }
 }
     
