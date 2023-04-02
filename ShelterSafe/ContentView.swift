@@ -19,20 +19,13 @@ struct ContentView: View {
         TabView(selection: $selectedTab) {
             
             VStack{
+                
                 MapBoxMapView().edgesIgnoringSafeArea(.top)
-
             }
                 .tabItem {
                     Label("Map", systemImage: "map")
-                }.tag("Map")
-            
-            ToolBoxView()
-                .tabItem {
-                    Label("Settings", systemImage: "gear")
-                }
-                .tag("Settings")
+               }.tag("Map")
 
-           
             //DetailView().ignoresSafeArea()
             Text("placeholder")
                 .tabItem {
@@ -41,10 +34,15 @@ struct ContentView: View {
             
             HomePageView()
                 .tabItem {
-                    Label("Home Page", systemImage: "gear")
+                    Label("Home Page", systemImage: "house")
                 }
                 .tag("Home Page")
-
+            
+            ToolBoxView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+                .tag("Settings")
                 
         }
         
