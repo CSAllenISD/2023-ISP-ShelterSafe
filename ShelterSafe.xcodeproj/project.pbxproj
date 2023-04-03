@@ -10,7 +10,6 @@
 		4610816F29D4019200ADE069 /* NWS_API_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610816E29D4019200ADE069 /* NWS_API_Model.swift */; };
 		4610817129D526B900ADE069 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610817029D526B900ADE069 /* TestView.swift */; };
 		461BE59C295D7011005EB14F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BE59B295D7011005EB14F /* Model.swift */; };
-		464A9B032936B18500015668 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 464A9B022936B18500015668 /* MapboxMaps */; };
 		464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B042936B24400015668 /* MapBoxMapView.swift */; };
 		464A9B072937173E00015668 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B062937173E00015668 /* DetailView.swift */; };
 		464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B09295D6E1200015668 /* ToolBoxView.swift */; };
@@ -75,7 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464A9B032936B18500015668 /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +187,6 @@
 			);
 			name = ShelterSafe;
 			packageProductDependencies = (
-				464A9B022936B18500015668 /* MapboxMaps */,
 			);
 			productName = ShelterSafe;
 			productReference = A67ABD1F2924157800726A2F /* ShelterSafe.app */;
@@ -264,7 +261,6 @@
 			);
 			mainGroup = A67ABD162924157800726A2F;
 			packageReferences = (
-				464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 			);
 			productRefGroup = A67ABD202924157800726A2F /* Products */;
 			projectDirPath = "";
@@ -649,25 +645,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		464A9B022936B18500015668 /* MapboxMaps */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
-			productName = MapboxMaps;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A67ABD2D2924157A00726A2F /* ShelterSafe.xcdatamodeld */ = {
