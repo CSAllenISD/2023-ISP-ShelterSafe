@@ -39,50 +39,66 @@ struct MapBoxMapView: UIViewControllerRepresentable {
         
     }
 }
+
 class ViewController: UIViewController {
-    internal var mapView: MapView!
+   internal var mapView: MapView!
+    var shelters : [Shelter] = []
+    
+ 
     
     
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-        let myResourceOptions = ResourceOptions(accessToken: "pk.eyJ1Ijoib25pa2giLCJhIjoiY2xiMWtyNG5kMDR1bTN3b2Z6NGtmbm92bSJ9.jktBy9muy0FjQvjshVeORg")
-        let myCameraOptions = CameraOptions(center: CLLocationCoordinate2D(latitude: 30.123806, longitude: -96.67585), zoom: 6, pitch: 30)
-        //let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions, cameraOptions: myCameraOptions)
-        
-        
-        
-        
-        let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions, cameraOptions: myCameraOptions)
-        
-        
-        mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
-        
-        mapView.location.delegate = self
-        mapView.location.options.puckType = .puck2D()
-        
-        
-        
-        
-        
-        
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubview(mapView)
-        
-        
-        //POINT ANNOTATIONS
-        let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
-        
-        // Make self the `AnnotationInteractionDelegate` to get called back on tap events
-        pointAnnotationManager.delegate = self
-        
-        // Add an annotation
-        let coordinate = CLLocationCoordinate2DMake(33.1032, -96.6706)
-        var pointAnnotation = PointAnnotation(coordinate: coordinate)
-        pointAnnotation.image = .init(image: UIImage(named: "red_pin")!, name: "red_pin")
-        pointAnnotationManager.annotations = [pointAnnotation]
+   override public func viewDidLoad() {
+       super.viewDidLoad()
+       
+       RawData.getShelters { fetchedShelters in
+           self.shelters = fetchedShelters
+       }
+       
+       
+       
+       
+       let myResourceOptions = ResourceOptions(accessToken: "pk.eyJ1Ijoib25pa2giLCJhIjoiY2xiMWtyNG5kMDR1bTN3b2Z6NGtmbm92bSJ9.jktBy9muy0FjQvjshVeORg")
+       let myCameraOptions = CameraOptions(center: CLLocationCoordinate2D(latitude: 30.123806, longitude: -96.67585), zoom: 6, pitch: 30)
+       //let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions, cameraOptions: myCameraOptions)
+       
+     
+       
+       
+       let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions, cameraOptions: myCameraOptions)
+       
+       
+       mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
+       
+       mapView.location.delegate = self
+       mapView.location.options.puckType = .puck2D()
+       
+
+       
+       
+       
+       
+       mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+       self.view.addSubview(mapView)
+       
+       
+       //POINT ANNOTATIONS
+       var pointAnnotationArray = [PointAnnotation]()
+       
+       for shelter in shelters {
+           pointAnnotationArray.append(PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: shelter.latitude, longitude: shelter.longitude)))
+       }
+ 
+       
+       
+       var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
+       
+       pointAnnotation.image = .init(image: UIImage(named: "Image.png")!, name: "Image.png")
+       
+       pointAnnotation.iconSize = 0.15
+       
+       let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
+       pointAnnotationManager.annotations = [pointAnnotation]
+       
        
        
        if let locationCoordinate = self.mapView?.location.latestLocation?.coordinate {
@@ -100,6 +116,8 @@ class ViewController: UIViewController {
     
     
 }
+
+
 extension ViewController: LocationPermissionsDelegate {
     
     func locationManager(_ locationManager: LocationManager, didChangeAccuracyAuthorization accuracyAuthorization: CLAccuracyAuthorization) {
