@@ -1,1 +1,50 @@
+import XCTest
+
+class MyUITests: XCTestCase {
+    
+    var app: XCUIApplication!
+    
+    override func setUp() {
+        super.setUp()
+        
+        continueAfterFailure = false
+        
+        app = XCUIApplication()
+        app.launch()
+    }
+    
+    override func tearDown() {
+        app = nil
+        
+        super.tearDown()
+    }
+    
+    func testLogin() {
+        let usernameTextField = app.textFields["username"]
+        let passwordTextField = app.textFields["password"]
+        let loginButton = app.buttons["login"]
+        
+        XCTAssertTrue(usernameTextField.exists)
+        XCTAssertTrue(passwordTextField.exists)
+        XCTAssertTrue(loginButton.exists)
+        
+        usernameTextField.tap()
+        usernameTextField.typeText("myUsername")
+        
+        passwordTextField.tap()
+        passwordTextField.typeText("myPassword")
+        
+        loginButton.tap()
+        
+        XCTAssertTrue(app.staticTexts["welcomeLabel"].exists)
+    }
+    
+}
+
+let app = XCUIApplication()
+app.launch()
+
+let testSuite = XCTestSuite(forTestCaseClass: MyUITests.self)
+testSuite.run()
+
 
