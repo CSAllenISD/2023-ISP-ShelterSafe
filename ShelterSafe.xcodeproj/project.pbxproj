@@ -25,6 +25,7 @@
 		A67ABD442924157A00726A2F /* ShelterSafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD432924157A00726A2F /* ShelterSafeUITests.swift */; };
 		A67ABD462924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD452924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift */; };
 		A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E99F7329D5F7090039C880 /* ShelterModel.swift */; };
+		EC82155229DB89B600356DB1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC82155129DB89B600356DB1 /* AboutView.swift */; };
 		ECA677C329DA1BB900F0E2F4 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		A67ABD432924157A00726A2F /* ShelterSafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeUITests.swift; sourceTree = "<group>"; };
 		A67ABD452924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A6E99F7329D5F7090039C880 /* ShelterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterModel.swift; sourceTree = "<group>"; };
+		EC82155129DB89B600356DB1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,11 +135,12 @@
 				A67ABD222924157800726A2F /* ShelterSafeApp.swift */,
 				464A9B062937173E00015668 /* DetailView.swift */,
 				A6341E5629C24DCD009A6D88 /* Data */,
-				464A9B09295D6E1200015668 /* ToolBoxView.swift */,
-				4610817029D526B900ADE069 /* TestView.swift */,
-				464A9B042936B24400015668 /* MapBoxMapView.swift */,
-				A67ABD242924157800726A2F /* ContentView.swift */,
 				ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */,
+				464A9B09295D6E1200015668 /* ToolBoxView.swift */,
+				464A9B042936B24400015668 /* MapBoxMapView.swift */,
+				4610817029D526B900ADE069 /* TestView.swift */,
+				EC82155129DB89B600356DB1 /* AboutView.swift */,
+				A67ABD242924157800726A2F /* ContentView.swift */,
 				A67ABD262924157A00726A2F /* Assets.xcassets */,
 				A67ABD2B2924157A00726A2F /* Persistence.swift */,
 				A67ABD302924157A00726A2F /* Info.plist */,
@@ -316,6 +319,7 @@
 				464A9B072937173E00015668 /* DetailView.swift in Sources */,
 				A67ABD2C2924157A00726A2F /* Persistence.swift in Sources */,
 				A67ABD252924157800726A2F /* ContentView.swift in Sources */,
+				EC82155229DB89B600356DB1 /* AboutView.swift in Sources */,
 				A67ABD2F2924157A00726A2F /* ShelterSafe.xcdatamodeld in Sources */,
 				464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */,
 				A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */,
