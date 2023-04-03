@@ -7,6 +7,7 @@
 
 import MapKit
 import SwiftUI
+import CoreLocation
 
 struct MapView: UIViewRepresentable {
     
@@ -15,11 +16,20 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        let coordinate = CLLocationCoordinate2D(latitude: 37.332331, longitude: -122.031219)
-        let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        uiView.setRegion(region, animated: true)
+        // Request location permission
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
         
+        // Show user location
+        uiView.showsUserLocation = true
+        
+        // Center map on user location
+        if let location = locationManager.location?.coordinate {
+            let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+            let region = MKCoordinateRegion(center: location, span: span)
+            uiView.setRegion(region, animated: true)
+            
+        }
     }
 }
 /*

@@ -39,7 +39,7 @@ struct ToolBoxView: View {
 
                 }
             .onAppear {
-                    RawData.getAlerts(url: "https://api.weather.gov/alerts/active?point=\(latitude),\(longitude)") { fetchedUsers in
+                    RawData.getAlerts(url: "https://api.weather.gov/alerts/active?area=NY") { fetchedUsers in
                         self.alerts = fetchedUsers
                     }
 
