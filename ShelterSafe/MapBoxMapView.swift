@@ -22,7 +22,7 @@ struct MapView: UIViewRepresentable {
         
         // Show user location
         uiView.showsUserLocation = true
-        
+
         // Center map on user location
         if let location = locationManager.location?.coordinate {
             let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)

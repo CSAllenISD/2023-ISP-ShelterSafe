@@ -18,11 +18,7 @@ struct ContentView: View {
         
         TabView(selection: $selectedTab) {
             
-            HomePageView()
-                .tabItem {
-                    Label("Home Page", systemImage: "house")
-                }
-                .tag("Home Page")
+            
             
             VStack{
                 
@@ -34,6 +30,11 @@ struct ContentView: View {
                         Label("Map", systemImage: "map")
                     }.tag("Map")
                 
+            HomePageView()
+                .tabItem {
+                    Label("Home Page", systemImage: "house")
+                }
+                .tag("Home Page")
                 ToolBoxView()
                     .tabItem {
                         Label("Settings", systemImage: "gear")
