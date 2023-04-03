@@ -27,7 +27,7 @@ struct ContentView: View {
             VStack{
                 
                 
-                MapBoxMapView().edgesIgnoringSafeArea(.top)
+                MapView().edgesIgnoringSafeArea(.top)
                 
             }
                     .tabItem {

@@ -4,11 +4,31 @@
 //
 //  Created by Onik Houqe on 11/29/22.
 //
+
+import MapKit
 import SwiftUI
-import UIKit
+
+struct MapView: UIViewRepresentable {
+    
+    func makeUIView(context: Context) -> MKMapView {
+        MKMapView(frame: .zero)
+    }
+    
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        let coordinate = CLLocationCoordinate2D(latitude: 37.332331, longitude: -122.031219)
+        let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        uiView.setRegion(region, animated: true)
+        
+    }
+}
+/*
+import SwiftUI
 import MapboxCommon
 import MapboxMaps
 import MapboxCoreMaps
+
+
 struct MapBoxMapView: UIViewControllerRepresentable {
      
     func makeUIViewController(context: Context) -> ViewController {
@@ -95,4 +115,4 @@ extension ViewController: AnnotationInteractionDelegate {
         print("Annotations tapped: \(annotations)")
     }
 }
-
+*/
