@@ -18,33 +18,42 @@ struct ContentView: View {
         
         TabView(selection: $selectedTab) {
             
-            VStack{
-                MapBoxMapView().edgesIgnoringSafeArea(.top)
-
-            }
+            HomePageView()
                 .tabItem {
-                    Label("One", systemImage: "map")
-                }.tag("One")
-            
-            ToolBoxView()
-                .tabItem {
-                    Label("Two", systemImage: "gear")
+                    Label("Home Page", systemImage: "house")
                 }
-                .tag("Two")
+                .tag("Home Page")
             
-
-            
-            
-           
-            //DetailView().ignoresSafeArea()
-            Text("placeholder")
-                .tabItem {
-                    Label("Three", systemImage: "tornado")
-                }.tint(Color.yellow)
+            VStack{
+                
+                
+                MapBoxMapView().edgesIgnoringSafeArea(.top)
+                
+            }
+                    .tabItem {
+                        Label("Map", systemImage: "map")
+                    }.tag("Map")
+                
+                ToolBoxView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
+                    .tag("Settings")
+                
+                
+                //DetailView().ignoresSafeArea()
+                Text("placeholder")
+                    .tabItem {
+                        Label("Weather Watch", systemImage: "tornado")
+                    }.tint(Color.yellow)
+                
+                
+            }
                 
         }
+        
     }
-}
+
     
     
     struct ContentView_Previews: PreviewProvider {
