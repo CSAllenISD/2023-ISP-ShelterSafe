@@ -25,9 +25,17 @@ struct MapView: UIViewRepresentable {
         
         // Center map on user location
         if let location = locationManager.location?.coordinate {
-            let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
             let region = MKCoordinateRegion(center: location, span: span)
             uiView.setRegion(region, animated: true)
+            
+            // Add marker for 950 Pelican Dr, Allen, TX 75013
+                    let annotation = MKPointAnnotation()
+                    let location = CLLocationCoordinate2D(latitude: 33.12296905983177, longitude: -96.67762683135507)
+                    annotation.coordinate = location
+                    annotation.title = "950 Pelican Dr"
+                    annotation.subtitle = "Allen, TX 75013"
+                    uiView.addAnnotation(annotation)
             
         }
     }
