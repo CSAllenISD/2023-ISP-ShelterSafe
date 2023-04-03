@@ -1,1 +1,51 @@
+import XCTest
+import Mapbox
+
+class MyMapboxTests: XCTestCase {
+    
+    var mapView: MGLMapView!
+    
+    override func setUp() {
+        super.setUp()
+        
+        continueAfterFailure = false
+        
+        mapView = MGLMapView(frame: CGRect(x: 0, y: 0, width: 320, height: 480), styleURL: MGLStyle.streetsStyleURL)
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), zoomLevel: 12, animated: false)
+    }
+    
+    override func tearDown() {
+        mapView = nil
+        
+        super.tearDown()
+    }
+    
+    func testSanFrancisco() {
+        let expectation = XCTestExpectation(description: "Map view loads San Francisco")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            let visibleAnnotations = self.mapView.visibleAnnotations
+            XCTAssertTrue(visibleAnnotations.count > 0)
+            
+            let sanFrancisco = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
+            var foundLocation = false
+            
+            for annotation in visibleAnnotations {
+                if let point = annotation as? MGLPointAnnotation, point.coordinate == sanFrancisco {
+                    foundLocation = true
+                    break
+                }
+            }
+            
+            XCTAssertTrue(foundLocation)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 10)
+    }
+    
+}
+
+let testSuite = XCTestSuite(forTestCaseClass: MyMapboxTests.self)
+testSuite.run()
 
