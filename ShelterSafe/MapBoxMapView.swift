@@ -75,7 +75,7 @@ class ViewController: UIViewController {
        
        var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 33.123806, longitude: -96.67585))
        
-       pointAnnotation.image = .init(image: UIImage(named: "Image.png")!, name: "Image.png")
+      // pointAnnotation.image = .init(image: UIImage(named: "Image.png")!, name: "Image.png")
        
        pointAnnotation.iconSize = 0.15
        

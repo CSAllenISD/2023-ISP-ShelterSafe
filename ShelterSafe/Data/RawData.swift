@@ -60,7 +60,7 @@ class RawData {
             .resume()
         } */
     
-    static func getAlerts(url: String, completion:@escaping ([NWSAlertFeature]) -> ()) {
+   /* static func getAlerts(url: String, completion:@escaping ([NWSAlertFeature]) -> ()) {
             guard let url = URL(string: url) else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -74,7 +74,7 @@ class RawData {
             }
             .resume()
         }
-    
+    */
     
     static func getShelters( completion:@escaping ([Shelter]) -> ()) {
             guard let url = URL(string: "https://www.codermerlin.academy/users/onik-hoque/Digital%20Portfolio/CS-II/Projects/ISP/features.json") else { return }

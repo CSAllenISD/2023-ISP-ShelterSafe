@@ -14,10 +14,10 @@ import SwiftUI
 struct ToolBoxView: View {
     
     @EnvironmentObject var locationManager : LocationManager
-    @State var alerts : [NWSAlertFeature] = []
+    //  @State var alerts : [NWSAlertFeature] = []
     
     
- 
+    
     
     
     var userLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }
@@ -31,36 +31,37 @@ struct ToolBoxView: View {
             Text("Disaster Details")
             NavigationView {
                 List {
-                    ForEach(alerts, id: \.id) { alert in
-                        NavigationLink(destination: Text(alert.properties.headline)) { Text(alert.properties.event)
-                    }
+                    /*    ForEach(alerts, id: \.id) { alert in
+                     NavigationLink(destination: Text(alert.properties.headline)) { Text(alert.properties.event)
+                     }
+                     }
+                     }*/
+                    
+                }
+                .onAppear {
+                    /*       RawData.getAlerts(url: "https://api.weather.gov/alerts/active?point=\(latitude),\(longitude)") { fetchedUsers in
+                     self.alerts = fetchedUsers
+                     }*/
+                    
                 }
             }
-
-                }
-            .onAppear {
-                    RawData.getAlerts(url: "https://api.weather.gov/alerts/active?point=\(latitude),\(longitude)") { fetchedUsers in
-                        self.alerts = fetchedUsers
-                    }
-
-        }
+            
         }
         
     }
     
-}
-
-struct DisasterDetailView : View {
-    let details : String
-  //  let
-    
-    var body : some View {
-        Text("test")
+    struct DisasterDetailView : View {
+        let details : String
+        //  let
+        
+        var body : some View {
+            Text("test")
+        }
     }
-}
-
-struct MyView_Previews: PreviewProvider {
-    static var previews: some View {
-        ToolBoxView().environmentObject(LocationManager())
+    
+    struct MyView_Previews: PreviewProvider {
+        static var previews: some View {
+            ToolBoxView().environmentObject(LocationManager())
+        }
     }
 }

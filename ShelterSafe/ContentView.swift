@@ -18,36 +18,26 @@ struct ContentView: View {
         
         TabView(selection: $selectedTab) {
             
+            HomePageView()
+                .tabItem {
+                    Label("Account", systemImage: "house")
+                }
+                .tag("Home Page")
+
             VStack{
-                
                 MapBoxMapView().edgesIgnoringSafeArea(.top)
             }
-                .tabItem {
-                    Label("Map", systemImage: "map")
-               }.tag("Map")
-
+            
+                    .tabItem {
+                        Label("Map", systemImage: "map")
+                    }.tag("Map")
+            
             //DetailView().ignoresSafeArea()
             Text("placeholder")
                 .tabItem {
                     Label("Weather Watch", systemImage: "tornado")
                 }.tint(Color.yellow)
             
-            HomePageView()
-                .tabItem {
-                    Label("Home Page", systemImage: "house")
-                }
-                .tag("Home Page")
-            
-            VStack{
-                
-                
-                MapBoxMapView().edgesIgnoringSafeArea(.top)
-                
-            }
-                    .tabItem {
-                        Label("Map", systemImage: "map")
-                    }.tag("Map")
-                
                 ToolBoxView()
                     .tabItem {
                         Label("Settings", systemImage: "gear")
@@ -55,11 +45,7 @@ struct ContentView: View {
                     .tag("Settings")
                 
                 
-                //DetailView().ignoresSafeArea()
-                Text("placeholder")
-                    .tabItem {
-                        Label("Weather Watch", systemImage: "tornado")
-                    }.tint(Color.yellow)
+              
                 
                 
             }
