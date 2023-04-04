@@ -29,13 +29,18 @@ struct MapView: UIViewRepresentable {
             let region = MKCoordinateRegion(center: location, span: span)
             uiView.setRegion(region, animated: true)
             
+            // Set camera angle to 45 degrees
+            let camera = uiView.camera
+            camera.pitch = 45
+            //uiView.setCamera(camera, animated: true)
+            
             // Add marker for 950 Pelican Dr, Allen, TX 75013
-                    let annotation = MKPointAnnotation()
-                    let location = CLLocationCoordinate2D(latitude: 33.12296905983177, longitude: -96.67762683135507)
-                    annotation.coordinate = location
-                    annotation.title = "950 Pelican Dr"
-                    annotation.subtitle = "Allen, TX 75013"
-                    uiView.addAnnotation(annotation)
+            let annotation = MKPointAnnotation()
+            let location = CLLocationCoordinate2D(latitude: 33.12296905983177, longitude: -96.67762683135507)
+            annotation.coordinate = location
+            annotation.title = "950 Pelican Dr"
+            annotation.subtitle = "Allen, TX 75013"
+            uiView.addAnnotation(annotation)
             
         }
     }

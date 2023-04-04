@@ -12,20 +12,22 @@ struct HomePageView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var sunRotationAngle: Double = 0
     @State private var textOpacity: Double = 0
-    @State private var username: String = ""
+    @State private var email: String = ""
     @State private var password: String = ""
+    @State private var showNewUserView = false
     struct SmallButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
                 .font(.caption)
                 .padding(5)
-                //.foregroundColor(.white)
-                //.background(configuration.isPressed ? Color.gray : Color.blue)
+            //.foregroundColor(.white)
+            //.background(configuration.isPressed ? Color.gray : Color.blue)
                 .cornerRadius(10)
         }
     }
-        
-        var body: some View {
+    
+    var body: some View {
+        NavigationView {
             ZStack {
                 // Display the sun
                 Image(systemName: "sun.max")
@@ -39,35 +41,55 @@ struct HomePageView: View {
                     Spacer()
                     Text("Sign in to Shelter Safe")
                         .font(.largeTitle)
+                        .fontWeight(.bold)
                         .foregroundColor(Color(UIColor.systemBrown))
                         .opacity(textOpacity)
                         .padding(.top, 50)
                     VStack {
-                        TextField("Username", text: $username)
+                        TextField("Email", text: $email)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
                         SecureField("Password", text: $password)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
-                        Button("Log In") {
+                        /*Button("Log In") {
                             // Perform login action
+                        }*/
+                        Button(action: login) {
+                            Text("Sign In")
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color(UIColor.systemBrown))
+                                .cornerRadius(10)
                         }
                         .padding()
                         
                         HStack {
-                                Button("Forgot Password?") {
-                                    // Handle forgot password action
-                                }
-                                .padding()
-                                .buttonStyle(SmallButtonStyle())
-                                Spacer()
-                                Button("Sign Up") {
-                                    // Handle new user action
-                                }
-                                .padding()
-                                .buttonStyle(SmallButtonStyle())
+                            Button("Forgot Password?") {
+                                // Handle forgot password action
                             }
+                            .padding()
+                            .buttonStyle(SmallButtonStyle())
+                            Spacer()
+                            /*NavigationLink(destination: NewUserView(), isActive: $showNewUserView) {
+                                Text("New User")
+                            }*/
+                            Button(action: { showNewUserView = true }) {
+                                    Text("Sign up")
+                            }
+                            /*Button("Sign Up") {
+                             // Handle new user action
+                             NewUserView()
+                             }*/
+                            .padding()
+                            .sheet(isPresented: $showNewUserView) {
+                                                NewUserView()
+                                            }
+                            .buttonStyle(SmallButtonStyle())
+                        }
                     }
+                    
                     .frame(width: 300, height: nil) // Center the login form
                     .background(colorScheme == .dark ? Color.black : Color.white)
                     .cornerRadius(20)
@@ -75,8 +97,11 @@ struct HomePageView: View {
                     .foregroundColor(Color(UIColor.systemBrown))
                     Spacer()
                 }
+                .navigationTitle("")
+                .navigationBarHidden(true)
                 .opacity(textOpacity)
             }
+            
             .onAppear {
                 withAnimation(Animation.linear(duration: 10).repeatForever()) {
                     sunRotationAngle = 360
@@ -84,6 +109,19 @@ struct HomePageView: View {
                 withAnimation(Animation.linear(duration: 1).delay(1)) {
                     textOpacity = 1
                 }
-            }
+                            }
+            
         }
+        
+
     }
+    private func login() {
+        /*Auth.auth().signIn(withEmail: username, password: password) { result, error in
+                    if let error = error {
+                        errorMessage = error.localizedDescription
+                    } else {
+                        errorMessage = nil
+                        // Handle successful login
+                    }*/
+    }
+}
