@@ -16,8 +16,6 @@ struct ToolBoxView: View {
     
     
     
-    
-    
     var userLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }
     var userLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)" }
     
