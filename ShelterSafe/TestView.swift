@@ -9,6 +9,7 @@ import SwiftUI
 
 
 //this is the view file
+
 struct TestView: View {
     
     @EnvironmentObject var locationManager : LocationManager
@@ -37,3 +38,4 @@ struct TestView_Previews: PreviewProvider {
         TestView().environmentObject(LocationManager())
     }
 }
+
