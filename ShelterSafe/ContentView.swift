@@ -18,11 +18,36 @@ struct ContentView: View {
         
         TabView(selection: $selectedTab) {
             
+<<<<<<< HEAD
+=======
+            VStack{
+                MapBoxMapView().edgesIgnoringSafeArea(.top)
+
+            }
+                .tabItem {
+                    Label("Map", systemImage: "map")
+                }.tag("Map")
+            
+            ToolBoxView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+                .tag("Settings")
+
+           
+            //DetailView().ignoresSafeArea()
+            Text("placeholder")
+                .tabItem {
+                    Label("Weather Watch", systemImage: "tornado")
+                }.tint(Color.yellow)
+            
+>>>>>>> parent of 94a9646 (Commit)
             HomePageView()
                 .tabItem {
                     Label("Home Page", systemImage: "house")
                 }
                 .tag("Home Page")
+<<<<<<< HEAD
             
             VStack{
                 
@@ -49,6 +74,9 @@ struct ContentView: View {
                 
                 
             }
+=======
+
+>>>>>>> parent of 94a9646 (Commit)
                 
         }
         
