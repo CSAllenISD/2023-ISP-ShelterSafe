@@ -4,14 +4,12 @@
 <dict>
 	<key>MBXAccessToken</key>
 	<string>pk.eyJ1Ijoib25pa2giLCJhIjoiY2xiMWtyNG5kMDR1bTN3b2Z6NGtmbm92bSJ9.jktBy9muy0FjQvjshVeORg</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Gets users current location and displays on map</string>
-    <key>UIApplicationSceneManifest</key>
-        <dict>
-            <key>UIApplicationSupportsMultipleScenes</key>
-            <true/>
-            <key>UISceneConfigurations</key>
-            <dict/>
-        </dict>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>

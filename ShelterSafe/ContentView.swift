@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-import MapboxMaps
-import MapboxCoreMaps
+//import MapboxMaps
+//import MapboxCoreMaps
 
 
 
@@ -18,6 +18,7 @@ struct ContentView: View {
         
         TabView(selection: $selectedTab) {
             
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
             VStack{
@@ -48,17 +49,25 @@ struct ContentView: View {
                 }
                 .tag("Home Page")
 <<<<<<< HEAD
+=======
+            
+>>>>>>> saivikasCommits
             
             VStack{
                 
                 
-                MapBoxMapView().edgesIgnoringSafeArea(.top)
+                MapView().edgesIgnoringSafeArea(.top)
                 
             }
                     .tabItem {
                         Label("Map", systemImage: "map")
                     }.tag("Map")
                 
+            HomePageView()
+                .tabItem {
+                    Label("Home Page", systemImage: "house")
+                }
+                .tag("Home Page")
                 ToolBoxView()
                     .tabItem {
                         Label("Settings", systemImage: "gear")

@@ -5,8 +5,48 @@
 //  Created by Onik Houqe on 11/29/22.
 //
 
+import MapKit
 import SwiftUI
-import UIKit
+import CoreLocation
+
+struct MapView: UIViewRepresentable {
+    
+    func makeUIView(context: Context) -> MKMapView {
+        MKMapView(frame: .zero)
+    }
+    
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        // Request location permission
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        
+        // Show user location
+        uiView.showsUserLocation = true
+
+        // Center map on user location
+        if let location = locationManager.location?.coordinate {
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let region = MKCoordinateRegion(center: location, span: span)
+            uiView.setRegion(region, animated: true)
+            
+            // Set camera angle to 45 degrees
+            let camera = uiView.camera
+            camera.pitch = 45
+            //uiView.setCamera(camera, animated: true)
+            
+            // Add marker for 950 Pelican Dr, Allen, TX 75013
+            let annotation = MKPointAnnotation()
+            let location = CLLocationCoordinate2D(latitude: 33.12296905983177, longitude: -96.67762683135507)
+            annotation.coordinate = location
+            annotation.title = "950 Pelican Dr"
+            annotation.subtitle = "Allen, TX 75013"
+            uiView.addAnnotation(annotation)
+            
+        }
+    }
+}
+/*
+import SwiftUI
 import MapboxCommon
 import MapboxMaps
 import MapboxCoreMaps
@@ -111,6 +151,9 @@ extension ViewController: LocationPermissionsDelegate {
     
     
 }
-
-
-
+extension ViewController: AnnotationInteractionDelegate {
+    public func annotationManager(_ manager: AnnotationManager, didDetectTappedAnnotations annotations: [Annotation]) {
+        print("Annotations tapped: \(annotations)")
+    }
+}
+*/

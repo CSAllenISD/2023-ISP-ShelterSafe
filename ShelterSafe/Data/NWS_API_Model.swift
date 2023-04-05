@@ -8,17 +8,17 @@
 import Foundation
 
 struct NWSAlert: Codable {
-    let type: String
-    //let features: [NWSAlertFeature]
-   // let title: String
-   // let updated: String
+    //let type: String
+    let features: [NWSAlertFeature]
+   //let title: String
+   //let updated: String
 }
-/*
+
 struct NWSAlertFeature: Codable {
     let id : String
-    let type: String
-  //  let geometry: NWSAlertGeometry
-  //  let properties: NWSAlertProperties
+    //let type: String
+  //let geometry: NWSAlertGeometry
+  let properties: NWSAlertProperties
 }
 
 struct NWSAlertGeometry: Codable {
@@ -43,5 +43,5 @@ struct NWSAlertGeocode: Codable {
     let same: [String]?
     let ugc: [String]?
 }
-*/
+
 
