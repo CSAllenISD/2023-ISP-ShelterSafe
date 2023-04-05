@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41B6471129DDE2E50021AA2E /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B6471029DDE2E50021AA2E /* LocationMapAnnotationView.swift */; };
 		4209228629DBF4F9003B7B68 /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209228529DBF4F9003B7B68 /* NewUserView.swift */; };
 		4610816F29D4019200ADE069 /* NWS_API_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610816E29D4019200ADE069 /* NWS_API_Model.swift */; };
 		4610817129D526B900ADE069 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610817029D526B900ADE069 /* TestView.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41B6471029DDE2E50021AA2E /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
 		4209228529DBF4F9003B7B68 /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
 		4610816E29D4019200ADE069 /* NWS_API_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWS_API_Model.swift; sourceTree = "<group>"; };
 		4610817029D526B900ADE069 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				464A9B042936B24400015668 /* MapBoxMapView.swift */,
 				4610817029D526B900ADE069 /* TestView.swift */,
 				A67ABD242924157800726A2F /* ContentView.swift */,
+				41B6471029DDE2E50021AA2E /* LocationMapAnnotationView.swift */,
 				A67ABD262924157A00726A2F /* Assets.xcassets */,
 				A67ABD2B2924157A00726A2F /* Persistence.swift */,
 				A67ABD302924157A00726A2F /* Info.plist */,
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6341E5829C24E1F009A6D88 /* RawData.swift in Sources */,
+				41B6471129DDE2E50021AA2E /* LocationMapAnnotationView.swift in Sources */,
 				ECA677C329DA1BB900F0E2F4 /* HomePageView.swift in Sources */,
 				4610816F29D4019200ADE069 /* NWS_API_Model.swift in Sources */,
 				4610817129D526B900ADE069 /* TestView.swift in Sources */,
