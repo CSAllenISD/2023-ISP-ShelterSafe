@@ -8,11 +8,20 @@
 //import Firebase
 import SwiftUI
 import UIKit
+import FirebaseAuth
+
+struct IdentifiableError: Identifiable {
+    let id = UUID()
+    let error: Error
+}
 
 struct NewUserView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var error: Error? = nil
+    @State private var authError: IdentifiableError? = nil
+
     
     var body: some View {
         VStack {
@@ -24,11 +33,13 @@ struct NewUserView: View {
             // Username field
             TextField("Email", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .accentColor(Color(UIColor.systemBrown))
                 .padding()
             
             // Password field
             SecureField("Password", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .accentColor(Color(UIColor.systemBrown))
                 .padding()
             
             // Confirm password field
@@ -44,8 +55,13 @@ struct NewUserView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color(UIColor.systemBrown))
                     .cornerRadius(10)
+                
             }
             .padding()
+            .alert(item: $authError) { authError in
+                Alert(title: Text("Error"), message: Text(authError.error.localizedDescription), dismissButton: .default(Text("OK")))
+            }
+
         }
         //.navigationTitle("New User")
         .background(Color(UIColor.systemBackground))
@@ -54,7 +70,7 @@ struct NewUserView: View {
 
     
     private func createNewUser() {
-        /*if password != confirmPassword {
+        if password != confirmPassword {
             error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Passwords do not match."])
             return
         }
@@ -65,6 +81,6 @@ struct NewUserView: View {
                 print("Error creating new user: \(error.localizedDescription)")
                 self.error = error
             }
-        }*/
+        }
     }
 }

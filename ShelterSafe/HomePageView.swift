@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UIKit
+import FirebaseAuth
 
 struct HomePageView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -15,6 +16,8 @@ struct HomePageView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showNewUserView = false
+    @State private var errorMessage: String?
+    
     struct SmallButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
@@ -49,12 +52,41 @@ struct HomePageView: View {
                         TextField("Email", text: $email)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
+                            .accentColor(Color(UIColor.systemBrown))
+                            .background(
+                                    Color.red.opacity(errorMessage != nil ? 0.2 : 0)
+                                        .cornerRadius(8)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.red.opacity(errorMessage != nil ? 0.5 : 0), lineWidth: 2)
+                                )
+                            /*.overlay(RoundedRectangle(cornerRadius: 5)
+                                                .stroke(errorMessage != nil ? Color.red : Color(UIColor.systemBrown), lineWidth: 1))*/
                         SecureField("Password", text: $password)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .accentColor(Color(UIColor.systemBrown))
                             .padding()
+                            .background(
+                                    Color.red.opacity(errorMessage != nil ? 0.2 : 0)
+                                        .cornerRadius(4)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.red.opacity(errorMessage != nil ? 0.5 : 0), lineWidth: 2)
+                                )
+                            /*.overlay(RoundedRectangle(cornerRadius: 10)
+                                                .stroke(errorMessage != nil ? Color.red : Color(UIColor.systemBrown), lineWidth: 1))*/
+                        
+                        // Error message
+                                        if let errorMessage = errorMessage {
+                                            Text(errorMessage)
+                                                .foregroundColor(.red)
+                                                .padding()
+                                        }
                         /*Button("Log In") {
-                            // Perform login action
-                        }*/
+                         // Perform login action
+                         }*/
                         Button(action: login) {
                             Text("Sign In")
                                 .foregroundColor(.white)
@@ -73,10 +105,10 @@ struct HomePageView: View {
                             .buttonStyle(SmallButtonStyle())
                             Spacer()
                             /*NavigationLink(destination: NewUserView(), isActive: $showNewUserView) {
-                                Text("New User")
-                            }*/
+                             Text("New User")
+                             }*/
                             Button(action: { showNewUserView = true }) {
-                                    Text("Sign up")
+                                Text("Sign up")
                             }
                             /*Button("Sign Up") {
                              // Handle new user action
@@ -84,8 +116,8 @@ struct HomePageView: View {
                              }*/
                             .padding()
                             .sheet(isPresented: $showNewUserView) {
-                                                NewUserView()
-                                            }
+                                NewUserView()
+                            }
                             .buttonStyle(SmallButtonStyle())
                         }
                     }
@@ -109,19 +141,24 @@ struct HomePageView: View {
                 withAnimation(Animation.linear(duration: 1).delay(1)) {
                     textOpacity = 1
                 }
-                            }
+            }
             
         }
         
-
+        
     }
     private func login() {
-        /*Auth.auth().signIn(withEmail: username, password: password) { result, error in
-                    if let error = error {
-                        errorMessage = error.localizedDescription
-                    } else {
-                        errorMessage = nil
-                        // Handle successful login
-                    }*/
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                errorMessage = error.localizedDescription
+            } else {
+                errorMessage = nil
+                // Handle successful login
+                if let authResult = result {
+                    print("Login succesful to \(authResult.user.uid)")
+                }
+                
+            }
+        }
     }
 }
