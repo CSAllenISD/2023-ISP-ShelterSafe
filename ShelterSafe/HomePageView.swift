@@ -23,6 +23,7 @@ struct HomePageView: View {
             configuration.label
                 .font(.caption)
                 .padding(5)
+                .foregroundColor(Color(red: 0.83, green: 0.71, blue: 0.71))
             //.foregroundColor(.white)
             //.background(configuration.isPressed ? Color.gray : Color.blue)
                 .cornerRadius(10)
@@ -35,65 +36,74 @@ struct HomePageView: View {
                 // Display the sun
                 Image(systemName: "sun.max")
                     .font(.system(size: 100))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(Color(red: 0.83, green: 0.71, blue: 0.71))
                     .opacity(1 - textOpacity) // Fade out the sun as the text fades in
                     .rotationEffect(Angle(degrees: sunRotationAngle))
+                
                 
                 // Display the login form
                 VStack {
                     Spacer()
-                    Text("Sign in to Shelter Safe")
+                    Text("Sign in")
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .foregroundColor(Color(UIColor.systemBrown))
-                        .opacity(textOpacity)
-                        .padding(.top, 50)
+                        .padding(.bottom, 30)
+                        //.foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                     VStack {
                         TextField("Email", text: $email)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .font(.title3)
+                            .autocapitalization(.none)
                             .padding()
-                            .accentColor(Color(UIColor.systemBrown))
-                            .background(
-                                    Color.red.opacity(errorMessage != nil ? 0.2 : 0)
-                                        .cornerRadius(8)
-                                )
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.red.opacity(errorMessage != nil ? 0.5 : 0), lineWidth: 2)
-                                )
+                            .frame(maxWidth: .infinity)
+                            .background(colorScheme == .dark ? Color.black : Color.white)
+                            .accentColor(Color(red: 0.83, green: 0.71, blue: 0.71))
+                            .foregroundColor(Color(red: 0.83, green: 0.71, blue: 0.71))
+                            .cornerRadius(50.0)
+                            //.shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
+                            .padding(.vertical)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 50.0)
+                                    .stroke(Color(red: 0.83, green: 0.71, blue: 0.71), lineWidth: 1)
+                                    .padding(4)
+                            )
+
                             /*.overlay(RoundedRectangle(cornerRadius: 5)
                                                 .stroke(errorMessage != nil ? Color.red : Color(UIColor.systemBrown), lineWidth: 1))*/
                         SecureField("Password", text: $password)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .accentColor(Color(UIColor.systemBrown))
-                            .padding()
-                            .background(
-                                    Color.red.opacity(errorMessage != nil ? 0.2 : 0)
-                                        .cornerRadius(4)
-                                )
+                            .font(.title3)
+                                .autocapitalization(.none)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(colorScheme == .dark ? Color.black : Color.white)
+                                .accentColor(Color(red: 0.83, green: 0.71, blue: 0.71))
+                                .foregroundColor(Color(red: 0.83, green: 0.71, blue: 0.71))
+                                .cornerRadius(50.0)
+                                //.shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
+                                .padding(.vertical)
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.red.opacity(errorMessage != nil ? 0.5 : 0), lineWidth: 2)
+                                    RoundedRectangle(cornerRadius: 50.0)
+                                        .stroke(Color(red: 0.83, green: 0.71, blue: 0.71), lineWidth: 1)
+                                        .padding(4)
                                 )
-                            /*.overlay(RoundedRectangle(cornerRadius: 10)
-                                                .stroke(errorMessage != nil ? Color.red : Color(UIColor.systemBrown), lineWidth: 1))*/
-                        
+                                
                         // Error message
                                         if let errorMessage = errorMessage {
                                             Text(errorMessage)
                                                 .foregroundColor(.red)
                                                 .padding()
                                         }
-                        /*Button("Log In") {
-                         // Perform login action
-                         }*/
                         Button(action: login) {
                             Text("Sign In")
+                                .font(.title3)
+                                .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(Color(UIColor.systemBrown))
-                                .cornerRadius(10)
+                                .background(Color(red: 0.83, green: 0.71, blue: 0.71))
+                                .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
+                                .cornerRadius(50.0)
+                                //.shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
+                                .padding(.vertical)
                         }
                         .padding()
                         
@@ -117,16 +127,18 @@ struct HomePageView: View {
                             .padding()
                             .sheet(isPresented: $showNewUserView) {
                                 NewUserView()
+                                    .frame(width: 400, height: 600)
                             }
                             .buttonStyle(SmallButtonStyle())
                         }
                     }
                     
                     .frame(width: 300, height: nil) // Center the login form
-                    .background(colorScheme == .dark ? Color.black : Color.white)
+                    //.background(colorScheme == .dark ? Color.black : Color.white)
+                    .background(Color(UIColor.systemBackground))
                     .cornerRadius(20)
                     .padding()
-                    .foregroundColor(Color(UIColor.systemBrown))
+                    //.foregroundColor(Color(UIColor.systemBrown))
                     Spacer()
                 }
                 .navigationTitle("")
@@ -154,8 +166,25 @@ struct HomePageView: View {
             } else {
                 errorMessage = nil
                 // Handle successful login
+                
                 if let authResult = result {
                     print("Login succesful to \(authResult.user.uid)")
+                    
+                    let alert = UIAlertController(title: "Logged in", message: "Logged in as \(self.email)", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                                   let rootViewController = windowScene.windows.first?.rootViewController {
+                                    rootViewController.present(alert, animated: true, completion: nil)
+                                }
+                    
+                    
+                    /*if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                                       let window = windowScene.windows.first {
+                                        window.rootViewController = UIHostingController(rootView: LoggedInView().frame(maxWidth: .infinity, maxHeight: .infinity)
+                                            .edgesIgnoringSafeArea(.all))
+                                        window.makeKeyAndVisible()
+                                    }*/
+                    
                 }
                 
             }
