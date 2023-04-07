@@ -1,4 +1,6 @@
+//Declared API's and Packages
 import XCTest
+import MapKit
 
 class MyUITests: XCTestCase {
     
@@ -19,26 +21,36 @@ class MyUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testLogin() {
-        let usernameTextField = app.textFields["username"]
-        let passwordTextField = app.textFields["password"]
-        let loginButton = app.buttons["login"]
+    func testMap() {
+        let mapview = app.maps.element
+        XCTAssertTrue(mapview.exists)
         
-        XCTAssertTrue(usernameTextField.exists)
-        XCTAssertTrue(passwordTextField.exists)
-        XCTAssertTrue(loginButton.exists)
+        let mapExpectation = expectation(for: NSPredicate(format: "annotations.count > 0"), evaluatedWith: mapview, handler: nil)
         
-        usernameTextField.tap()
-        usernameTextField.typeText("myUsername")
+        let mapViewDelegate = MapViewDelegate(expectation: mapExpectation)
+        mapview.delegate = mapViewDelegate
         
-        passwordTextField.tap()
-        passwordTextField.typeText("myPassword")
+        waitForExpectations(timeout: 10, handler: nil)
         
-        loginButton.tap()
-        
-        XCTAssertTrue(app.staticTexts["welcomeLabel"].exists)
+        let annotation = mapViewDelegate.annotations.first
+        XCTAssertTrue(annotation?.title == "San Francisco")
+        XCTAssertTrue(annotation?.subtitle == "California")
     }
     
+}
+
+class MapViewDelegate: NSObject, MKMapViewDelegate {
+    let expectation: XCTestExpectation
+    var annotations: [MKAnnotation] = []
+    
+    init(expectation: XCTestExpectation) {
+        self.expectation = expectation
+    }
+    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        annotations = mapView.annotations
+        expectation.fulfill()
+    }
 }
 
 let app = XCUIApplication()
@@ -46,5 +58,4 @@ app.launch()
 
 let testSuite = XCTestSuite(forTestCaseClass: MyUITests.self)
 testSuite.run()
-
 
