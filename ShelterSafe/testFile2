@@ -1,51 +1,51 @@
-import XCTest
-import Mapbox
+import MapKit
 
-class MyMapboxTests: XCTestCase {
+// Define a ViewController with MapKit
+class ViewController: UIViewController, MKMapViewDelegate {
     
-    var mapView: MGLMapView!
-    
-    override func setUp() {
-        super.setUp()
-        
-        continueAfterFailure = false
-        
-        mapView = MGLMapView(frame: CGRect(x: 0, y: 0, width: 320, height: 480), styleURL: MGLStyle.streetsStyleURL)
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), zoomLevel: 12, animated: false)
+    // Define a map view
+    var mapView: MKMapView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Create a map view
+        mapView = MKMapView(frame: view.bounds)
+        mapView.delegate = self
+        view.addSubview(mapView)
+
+        // Define a location to center the map on
+        let location = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
+
+        // Define a region to display on the map
+        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        mapView.setRegion(region, animated: true)
+
+        // Add a pin to the map
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "San Francisco"
+        annotation.subtitle = "California"
+        mapView.addAnnotation(annotation)
     }
     
-    override func tearDown() {
-        mapView = nil
-        
-        super.tearDown()
-    }
-    
-    func testSanFrancisco() {
-        let expectation = XCTestExpectation(description: "Map view loads San Francisco")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            let visibleAnnotations = self.mapView.visibleAnnotations
-            XCTAssertTrue(visibleAnnotations.count > 0)
-            
-            let sanFrancisco = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
-            var foundLocation = false
-            
-            for annotation in visibleAnnotations {
-                if let point = annotation as? MGLPointAnnotation, point.coordinate == sanFrancisco {
-                    foundLocation = true
-                    break
-                }
-            }
-            
-            XCTAssertTrue(foundLocation)
-            expectation.fulfill()
+    // Implement the MKMapViewDelegate method to customize the pin view
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "pin"
+        var view: MKPinAnnotationView
+
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
-        
-        wait(for: [expectation], timeout: 10)
+
+        return view
     }
-    
 }
 
-let testSuite = XCTestSuite(forTestCaseClass: MyMapboxTests.self)
-testSuite.run()
 
