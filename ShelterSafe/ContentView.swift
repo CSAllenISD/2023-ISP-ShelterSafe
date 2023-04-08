@@ -13,7 +13,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedTab = "One"
-    
+    @EnvironmentObject var locationsViewModel: LocationsViewModel
+
     var body: some View {
         
         TabView(selection: $selectedTab) {
@@ -24,6 +25,7 @@ struct ContentView: View {
                 
                 
                 LocationsView().edgesIgnoringSafeArea(.top)
+                    .environmentObject(LocationsViewModel())
                 
             }
                     .tabItem {
@@ -60,6 +62,7 @@ struct ContentView: View {
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
+                
         }
     }
 

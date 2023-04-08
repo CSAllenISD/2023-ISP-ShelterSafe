@@ -28,7 +28,7 @@ struct ShelterSafeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            var locationManager = LocationManager()
+            let locationManager = LocationManager()
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext).environmentObject(locationManager)
         }
