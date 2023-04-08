@@ -20,7 +20,7 @@ class LocationsDataService {
                 "PranavHouse",
                 "PranavHouse",
             ],
-            link: "https://en.wikipedia.org/wiki/Colosseum"),
+            link: "https://www.magicbricks.com/pranav-homes-beeramguda-hyderabad-pdpid-4d4235303139353238"),
         Location(
             name: "Saivikas' House",
             cityName: "Allen, TX",
@@ -31,7 +31,7 @@ class LocationsDataService {
                 "SriHouse",
                 "SriHouse",
             ],
-            link: "https://en.wikipedia.org/wiki/Pantheon,_Rome"),
+            link: "https://www.youtube.com/watch?v=Zz9QP0YWpDA&ab_channel=ABPNEWS"),
         Location(
             name: "Steam Center",
             cityName: "Allen, TX",
@@ -42,7 +42,7 @@ class LocationsDataService {
                 "STEAM",
                 "STEAM",
             ],
-            link: "https://en.wikipedia.org/wiki/Trevi_Fountain"),
+            link: "https://www.allenisd.org/steamcenter"),
         Location(
             name: "Allen High School",
             cityName: "Allen, TX",
@@ -53,7 +53,7 @@ class LocationsDataService {
                 "AHS",
                 "AHS",
             ],
-            link: "https://en.wikipedia.org/wiki/Eiffel_Tower"),
+            link: "https://www.allenisd.org/allenhs"),
         Location(
             name: "Eagle Stadium",
             cityName: "Allen, TX",
@@ -64,7 +64,7 @@ class LocationsDataService {
                 "AHS-Stadium",
                 "AHS-Stadium",
             ],
-            link: "https://en.wikipedia.org/wiki/Louvre"),
+            link: "https://www.allenisd.org/Page/62171"),
     ]
     
 }
