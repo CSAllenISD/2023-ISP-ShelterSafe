@@ -19,7 +19,7 @@ struct MapView: UIViewRepresentable {
         // Request location permission
         let locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
-        
+        uiView.showsUserLocation = true
         // Show user location
         uiView.showsUserLocation = true
 

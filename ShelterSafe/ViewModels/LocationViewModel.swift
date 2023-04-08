@@ -1,9 +1,9 @@
 //
 //  LocationsViewModel.swift
-//  SwiftfulMapApp
+//  ShelterSafe
 //
-//  Created by Nick Sarno on 11/27/21.
 //
+
 
 import Foundation
 import MapKit
