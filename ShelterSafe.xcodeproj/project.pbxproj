@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41FB237129E1244600988B4E /* DataServices in Resources */ = {isa = PBXBuildFile; fileRef = 41FB237029E1244600988B4E /* DataServices */; };
 		4209228629DBF4F9003B7B68 /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209228529DBF4F9003B7B68 /* NewUserView.swift */; };
 		42B83F4B29DDCC84005A280F /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 42B83F4A29DDCC84005A280F /* GoogleSignIn */; };
 		42D3933D29DD2CD4001A5EEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42D3933C29DD2CD4001A5EEF /* GoogleService-Info.plist */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41FB237029E1244600988B4E /* DataServices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DataServices; path = "../../SwiftfUI-Map-App-MVVM/SwiftfulMapApp/DataServices"; sourceTree = "<group>"; };
 		4209228529DBF4F9003B7B68 /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
 		42D3933C29DD2CD4001A5EEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4610816E29D4019200ADE069 /* NWS_API_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWS_API_Model.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				A67ABD222924157800726A2F /* ShelterSafeApp.swift */,
 				464A9B062937173E00015668 /* DetailView.swift */,
+				41FB237029E1244600988B4E /* DataServices */,
 				A6341E5629C24DCD009A6D88 /* Data */,
 				ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */,
 				42D3933C29DD2CD4001A5EEF /* GoogleService-Info.plist */,
@@ -301,6 +304,7 @@
 			files = (
 				A67ABD2A2924157A00726A2F /* Preview Assets.xcassets in Resources */,
 				A67ABD272924157A00726A2F /* Assets.xcassets in Resources */,
+				41FB237129E1244600988B4E /* DataServices in Resources */,
 				42D3933D29DD2CD4001A5EEF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
