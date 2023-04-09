@@ -39,7 +39,7 @@ struct ContentView: View {
                 .tag("Home Page")
                 ToolBoxView()
                     .tabItem {
-                        Label("Settings", systemImage: "gear")
+                        Label("Weather Watch", systemImage: "tornado")
                     }
                     .tag("Settings")
                 
@@ -47,7 +47,7 @@ struct ContentView: View {
                 //DetailView().ignoresSafeArea()
                 Text("placeholder")
                     .tabItem {
-                        Label("Weather Watch", systemImage: "tornado")
+                        Label("Settings", systemImage: "gear")
                     }.tint(Color.yellow)
                 
                 

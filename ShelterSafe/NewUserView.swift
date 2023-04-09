@@ -23,6 +23,7 @@ struct NewUserView: View {
     @State private var error: Error? = nil
     //@State private var authError: IdentifiableError? = nil
     @State private var errorMessage: String?
+    @Binding var newUserCreated: Bool // add a binding variable to track if a new user is created
     
     
     var body: some View {
@@ -99,6 +100,7 @@ struct NewUserView: View {
                         
                     }
                     //.padding()
+                    
 
                     
                 }
@@ -116,12 +118,25 @@ struct NewUserView: View {
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if let user = result?.user {
                     print("New user \(user.uid) created successfully.")
+                    //newUserCreated = true
+                    closeSheet()
+                    
+                    
                 } else if let error = error {
                     print("Error creating new user: \(error.localizedDescription)")
-                    self.errorMessage = error.localizedDescription
+                    errorMessage = error.localizedDescription
                 }
+                //newUserCreated = true
             }
         }
     }
-
-
+func closeSheet() {
+    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+          let window = windowScene.windows.first(where: { $0.isKeyWindow }),
+          let viewController = window.rootViewController?.presentedViewController else {
+              print("Unable to close sheet: could not find presented view controller.")
+              return
+          }
+    
+    viewController.dismiss(animated: true, completion: nil)
+}
