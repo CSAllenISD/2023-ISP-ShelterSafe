@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41FB237329E1272E00988B4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41FB237229E1272E00988B4E /* GoogleService-Info.plist */; };
 		41FB237629E12AB300988B4E /* LocationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB237529E12AB300988B4E /* LocationDataService.swift */; };
-		41FB237E29E12B8400988B4E /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB237929E12B8400988B4E /* LocationMapAnnotationView.swift */; };
-		41FB237F29E12B8400988B4E /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB237A29E12B8400988B4E /* LocationDetailView.swift */; };
-		41FB238029E12B8400988B4E /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB237B29E12B8400988B4E /* LocationPreviewView.swift */; };
-		41FB238129E12B8400988B4E /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB237C29E12B8400988B4E /* LocationsView.swift */; };
-		41FB238229E12B8400988B4E /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB237D29E12B8400988B4E /* LocationsListView.swift */; };
 		41FB238729E12C1100988B4E /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB238629E12C1100988B4E /* LocationViewModel.swift */; };
 		41FB238B29E12C5200988B4E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB238A29E12C5200988B4E /* Location.swift */; };
 		4209228629DBF4F9003B7B68 /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209228529DBF4F9003B7B68 /* NewUserView.swift */; };
@@ -29,7 +23,6 @@
 		464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B09295D6E1200015668 /* ToolBoxView.swift */; };
 		A6341E5829C24E1F009A6D88 /* RawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6341E5729C24E1F009A6D88 /* RawData.swift */; };
 		A67ABD232924157800726A2F /* ShelterSafeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD222924157800726A2F /* ShelterSafeApp.swift */; };
-		A67ABD252924157800726A2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD242924157800726A2F /* ContentView.swift */; };
 		A67ABD272924157A00726A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67ABD262924157A00726A2F /* Assets.xcassets */; };
 		A67ABD2A2924157A00726A2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67ABD292924157A00726A2F /* Preview Assets.xcassets */; };
 		A67ABD2C2924157A00726A2F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD2B2924157A00726A2F /* Persistence.swift */; };
@@ -39,6 +32,13 @@
 		A67ABD462924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD452924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift */; };
 		A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E99F7329D5F7090039C880 /* ShelterModel.swift */; };
 		ECA677C329DA1BB900F0E2F4 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */; };
+		FB2679D429E374140055DEEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2679D329E374140055DEEE /* GoogleService-Info.plist */; };
+		FB2679DA29E375470055DEEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679D929E375470055DEEE /* ContentView.swift */; };
+		FB2679DC29E375480055DEEE /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679DB29E375480055DEEE /* LocationDetailView.swift */; };
+		FB2679DE29E3754A0055DEEE /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679DD29E3754A0055DEEE /* LocationMapAnnotationView.swift */; };
+		FB2679E029E3754C0055DEEE /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679DF29E3754C0055DEEE /* LocationPreviewView.swift */; };
+		FB2679E229E3754E0055DEEE /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679E129E3754E0055DEEE /* LocationsListView.swift */; };
+		FB2679E429E375500055DEEE /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679E329E375500055DEEE /* LocationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,13 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		41FB237229E1272E00988B4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		41FB237529E12AB300988B4E /* LocationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataService.swift; sourceTree = "<group>"; };
-		41FB237929E12B8400988B4E /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationMapAnnotationView.swift; path = "../../../SwiftfUI-Map-App-MVVM/SwiftfulMapApp/Views/LocationMapAnnotationView.swift"; sourceTree = "<group>"; };
-		41FB237A29E12B8400988B4E /* LocationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailView.swift; path = "../../../SwiftfUI-Map-App-MVVM/SwiftfulMapApp/Views/LocationDetailView.swift"; sourceTree = "<group>"; };
-		41FB237B29E12B8400988B4E /* LocationPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPreviewView.swift; path = "../../../SwiftfUI-Map-App-MVVM/SwiftfulMapApp/Views/LocationPreviewView.swift"; sourceTree = "<group>"; };
-		41FB237C29E12B8400988B4E /* LocationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsView.swift; path = "../../../SwiftfUI-Map-App-MVVM/SwiftfulMapApp/Views/LocationsView.swift"; sourceTree = "<group>"; };
-		41FB237D29E12B8400988B4E /* LocationsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsListView.swift; path = "../../../SwiftfUI-Map-App-MVVM/SwiftfulMapApp/Views/LocationsListView.swift"; sourceTree = "<group>"; };
 		41FB238629E12C1100988B4E /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		41FB238A29E12C5200988B4E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4209228529DBF4F9003B7B68 /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
@@ -78,7 +72,6 @@
 		A6341E5729C24E1F009A6D88 /* RawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawData.swift; sourceTree = "<group>"; };
 		A67ABD1F2924157800726A2F /* ShelterSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelterSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67ABD222924157800726A2F /* ShelterSafeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeApp.swift; sourceTree = "<group>"; };
-		A67ABD242924157800726A2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A67ABD262924157A00726A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A67ABD292924157A00726A2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A67ABD2B2924157A00726A2F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -91,6 +84,13 @@
 		A67ABD452924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A6E99F7329D5F7090039C880 /* ShelterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterModel.swift; sourceTree = "<group>"; };
 		ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		FB2679D329E374140055DEEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Library/Messages/Attachments/00/00/A1282831-995D-4DFB-947C-C2682DBF2162/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB2679D929E375470055DEEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FB2679DB29E375480055DEEE /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		FB2679DD29E3754A0055DEEE /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
+		FB2679DF29E3754C0055DEEE /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
+		FB2679E129E3754E0055DEEE /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
+		FB2679E329E375500055DEEE /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,18 +128,6 @@
 				41FB237529E12AB300988B4E /* LocationDataService.swift */,
 			);
 			path = DataServices;
-			sourceTree = "<group>";
-		};
-		41FB237829E12B6400988B4E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				41FB237A29E12B8400988B4E /* LocationDetailView.swift */,
-				41FB237929E12B8400988B4E /* LocationMapAnnotationView.swift */,
-				41FB237B29E12B8400988B4E /* LocationPreviewView.swift */,
-				41FB237D29E12B8400988B4E /* LocationsListView.swift */,
-				41FB237C29E12B8400988B4E /* LocationsView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		41FB238529E12BDD00988B4E /* ViewModels */ = {
@@ -193,19 +181,23 @@
 			isa = PBXGroup;
 			children = (
 				A67ABD222924157800726A2F /* ShelterSafeApp.swift */,
+				FB2679D929E375470055DEEE /* ContentView.swift */,
+				FB2679DB29E375480055DEEE /* LocationDetailView.swift */,
+				FB2679DD29E3754A0055DEEE /* LocationMapAnnotationView.swift */,
+				FB2679DF29E3754C0055DEEE /* LocationPreviewView.swift */,
+				FB2679E129E3754E0055DEEE /* LocationsListView.swift */,
+				FB2679E329E375500055DEEE /* LocationsView.swift */,
 				41FB238929E12C3C00988B4E /* Models */,
 				464A9B062937173E00015668 /* DetailView.swift */,
 				41FB238529E12BDD00988B4E /* ViewModels */,
-				41FB237829E12B6400988B4E /* Views */,
 				41FB237429E12A7500988B4E /* DataServices */,
 				A6341E5629C24DCD009A6D88 /* Data */,
 				ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */,
 				4209228529DBF4F9003B7B68 /* NewUserView.swift */,
-				41FB237229E1272E00988B4E /* GoogleService-Info.plist */,
+				FB2679D329E374140055DEEE /* GoogleService-Info.plist */,
 				464A9B09295D6E1200015668 /* ToolBoxView.swift */,
 				464A9B042936B24400015668 /* MapBoxMapView.swift */,
 				4610817029D526B900ADE069 /* TestView.swift */,
-				A67ABD242924157800726A2F /* ContentView.swift */,
 				A67ABD262924157A00726A2F /* Assets.xcassets */,
 				A67ABD2B2924157A00726A2F /* Persistence.swift */,
 				A67ABD302924157A00726A2F /* Info.plist */,
@@ -356,7 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67ABD2A2924157A00726A2F /* Preview Assets.xcassets in Resources */,
-				41FB237329E1272E00988B4E /* GoogleService-Info.plist in Resources */,
+				FB2679D429E374140055DEEE /* GoogleService-Info.plist in Resources */,
 				A67ABD272924157A00726A2F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,27 +374,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41FB237F29E12B8400988B4E /* LocationDetailView.swift in Sources */,
 				A6341E5829C24E1F009A6D88 /* RawData.swift in Sources */,
 				ECA677C329DA1BB900F0E2F4 /* HomePageView.swift in Sources */,
+				FB2679DC29E375480055DEEE /* LocationDetailView.swift in Sources */,
 				4610816F29D4019200ADE069 /* NWS_API_Model.swift in Sources */,
 				41FB238729E12C1100988B4E /* LocationViewModel.swift in Sources */,
-				41FB238029E12B8400988B4E /* LocationPreviewView.swift in Sources */,
-				41FB238229E12B8400988B4E /* LocationsListView.swift in Sources */,
 				4610817129D526B900ADE069 /* TestView.swift in Sources */,
 				464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */,
+				FB2679E429E375500055DEEE /* LocationsView.swift in Sources */,
 				41FB237629E12AB300988B4E /* LocationDataService.swift in Sources */,
+				FB2679DA29E375470055DEEE /* ContentView.swift in Sources */,
 				464A9B072937173E00015668 /* DetailView.swift in Sources */,
-				41FB237E29E12B8400988B4E /* LocationMapAnnotationView.swift in Sources */,
 				41FB238B29E12C5200988B4E /* Location.swift in Sources */,
 				A67ABD2C2924157A00726A2F /* Persistence.swift in Sources */,
-				41FB238129E12B8400988B4E /* LocationsView.swift in Sources */,
-				A67ABD252924157800726A2F /* ContentView.swift in Sources */,
 				4209228629DBF4F9003B7B68 /* NewUserView.swift in Sources */,
 				A67ABD2F2924157A00726A2F /* ShelterSafe.xcdatamodeld in Sources */,
 				464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */,
+				FB2679E229E3754E0055DEEE /* LocationsListView.swift in Sources */,
 				A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */,
 				A67ABD232924157800726A2F /* ShelterSafeApp.swift in Sources */,
+				FB2679DE29E3754A0055DEEE /* LocationMapAnnotationView.swift in Sources */,
+				FB2679E029E3754C0055DEEE /* LocationPreviewView.swift in Sources */,
 				461BE59C295D7011005EB14F /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
