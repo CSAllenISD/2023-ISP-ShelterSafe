@@ -77,7 +77,7 @@ class RawData {
     
     
     static func getShelters( completion:@escaping ([Shelter]) -> ()) {
-            guard let url = URL(string: "https://www.codermerlin.academy/users/onik-hoque/Digital%20Portfolio/CS-II/Projects/ISP/features.json") else { return }
+            guard let url = URL(string: "https://codermerlin.academy/igis/onik_hoque/get_shelters") else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
                 let shelters = try! JSONDecoder().decode([Shelter].self, from: data!)
@@ -88,6 +88,48 @@ class RawData {
             }
             .resume()
         }
+    
+    
+    static func addShelter(shelter: Shelter) {
+        
+        guard let url = URL(string: "https://codermerlin.academy/igis/onik_hoque/add_shelters") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        guard let httpBody = try? JSONEncoder().encode(shelter) else { return }
+        
+        request.httpBody = httpBody
+        
+        URLSession.shared.dataTask(with:request) { shelter, response, error in
+            //pass
+        }.resume()
+    
+    }
+    
+    
+    
+    
+    static func editShelter(shelter: Shelter) {
+        
+        guard let url = URL(string: "https://codermerlin.academy/igis/onik_hoque/edit_shelters") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        guard let httpBody = try? JSONEncoder().encode(shelter) else { return }
+        
+        request.httpBody = httpBody
+        
+        URLSession.shared.dataTask(with:request) { shelter, response, error in
+            //pass
+        }.resume()
+    
+    }
+    
+    
     
     
 
