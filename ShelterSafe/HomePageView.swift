@@ -8,6 +8,8 @@
 import SwiftUI
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
+import GoogleSignInSwift
 
 struct HomePageView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -56,7 +58,7 @@ struct HomePageView: View {
                             .font(.title3)
                             .autocapitalization(.none)
                             .padding()
-                            .frame(maxWidth: .infinity)
+                            .frame(maxWidth: .infinity, maxHeight: 60)
                             .background(colorScheme == .dark ? Color.black : Color.white)
                             .accentColor(Color(red: 0.83, green: 0.71, blue: 0.71))
                             .foregroundColor(Color(red: 0.83, green: 0.71, blue: 0.71))
@@ -139,6 +141,12 @@ struct HomePageView: View {
                                     }
                             .buttonStyle(SmallButtonStyle())
                         }
+                    }
+                    VStack{
+                        GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .icon, state: .normal)) {
+                            
+                        }
+
                     }
                     
                     .frame(width: 300, height: nil) // Center the login form
