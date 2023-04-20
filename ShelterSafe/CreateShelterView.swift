@@ -24,7 +24,7 @@ struct CreateShelterView: View {
         Text("Create Shelter View")
     }
     
-    func createShelter() -> UIViewController {
+    func createShelter() -> Shelter? {
         
         // Create an alert controller to display input fields to the user
         let alertController = UIAlertController(title: "Create Shelter", message: nil, preferredStyle: .alert)
@@ -104,11 +104,16 @@ struct CreateShelterView: View {
             do {
                 try managedContext.save()
                 print("Saved shelter to Core Data.")
-            } catch  let as NSError {
+                
+            } catch  let error as NSError {
+                print(error.localizedDescription)
             }
                 
         }
+        
+        
     }
+    
 }
 
 struct CreateShelterView_Previews: PreviewProvider {
