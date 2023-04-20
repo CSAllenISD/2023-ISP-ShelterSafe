@@ -13,6 +13,7 @@ import UIKit
 
 
 @main
+
 struct ShelterSafeApp: App {
     let persistenceController = PersistenceController.shared
     @State private var MapOpen = true
@@ -25,6 +26,7 @@ struct ShelterSafeApp: App {
     }
     
     
+    
 
     var body: some Scene {
         WindowGroup {
@@ -34,3 +36,4 @@ struct ShelterSafeApp: App {
         }
     }
 }
+
