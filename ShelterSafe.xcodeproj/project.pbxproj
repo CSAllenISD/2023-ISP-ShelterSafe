@@ -32,6 +32,7 @@
 		A67ABD462924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD452924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift */; };
 		A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E99F7329D5F7090039C880 /* ShelterModel.swift */; };
 		ECA677C329DA1BB900F0E2F4 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */; };
+		ECF4922629F1AB330087FEE4 /* CreateShelterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF4922529F1AB330087FEE4 /* CreateShelterView.swift */; };
 		FB2679D429E374140055DEEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2679D329E374140055DEEE /* GoogleService-Info.plist */; };
 		FB2679DA29E375470055DEEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679D929E375470055DEEE /* ContentView.swift */; };
 		FB2679DC29E375480055DEEE /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679DB29E375480055DEEE /* LocationDetailView.swift */; };
@@ -84,6 +85,7 @@
 		A67ABD452924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A6E99F7329D5F7090039C880 /* ShelterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterModel.swift; sourceTree = "<group>"; };
 		ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		ECF4922529F1AB330087FEE4 /* CreateShelterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShelterView.swift; sourceTree = "<group>"; };
 		FB2679D329E374140055DEEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Library/Messages/Attachments/00/00/A1282831-995D-4DFB-947C-C2682DBF2162/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB2679D929E375470055DEEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB2679DB29E375480055DEEE /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				41FB237429E12A7500988B4E /* DataServices */,
 				A6341E5629C24DCD009A6D88 /* Data */,
 				ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */,
+				ECF4922529F1AB330087FEE4 /* CreateShelterView.swift */,
 				4209228529DBF4F9003B7B68 /* NewUserView.swift */,
 				FB2679D329E374140055DEEE /* GoogleService-Info.plist */,
 				464A9B09295D6E1200015668 /* ToolBoxView.swift */,
@@ -390,6 +393,7 @@
 				4209228629DBF4F9003B7B68 /* NewUserView.swift in Sources */,
 				A67ABD2F2924157A00726A2F /* ShelterSafe.xcdatamodeld in Sources */,
 				464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */,
+				ECF4922629F1AB330087FEE4 /* CreateShelterView.swift in Sources */,
 				FB2679E229E3754E0055DEEE /* LocationsListView.swift in Sources */,
 				A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */,
 				A67ABD232924157800726A2F /* ShelterSafeApp.swift in Sources */,
