@@ -22,7 +22,6 @@ class RawData {
     
     
     
-
     
     
     func getLink() -> String {

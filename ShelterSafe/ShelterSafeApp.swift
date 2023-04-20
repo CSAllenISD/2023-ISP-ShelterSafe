@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseCore
 import GoogleSignIn
 import UIKit
-
+import CoreData
 
 
 @main
