@@ -110,25 +110,22 @@ struct NewUserView: View {
             }
         }
         
-        private func createNewUser() {
-            if password != confirmPassword {
-                error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Passwords do not match."])
-                return
-            }
-            Auth.auth().createUser(withEmail: email, password: password) { result, error in
-                if let user = result?.user {
-                    print("New user \(user.uid) created successfully.")
-                    //newUserCreated = true
-                    closeSheet()
-                    
-                    
-                } else if let error = error {
-                    print("Error creating new user: \(error.localizedDescription)")
-                    errorMessage = error.localizedDescription
-                }
-                //newUserCreated = true
+    public func createNewUser() {
+        if password != confirmPassword {
+            errorMessage = "Passwords do not match."
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let user = result?.user {
+                print("New user \(user.uid) created successfully.")
+                newUserCreated = true
+                closeSheet()
+            } else if let error = error {
+                print("Error creating new user: \(error.localizedDescription)")
+                errorMessage = error.localizedDescription
             }
         }
+    }
     }
 func closeSheet() {
     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
