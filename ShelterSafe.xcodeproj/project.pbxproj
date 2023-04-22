@@ -137,12 +137,12 @@
 				464A9B042936B24400015668 /* MapBoxMapView.swift */,
 				4610817029D526B900ADE069 /* TestView.swift */,
 				A67ABD242924157800726A2F /* ContentView.swift */,
+				468337BD29E64716000B58AF /* ShelterListView.swift */,
 				A67ABD262924157A00726A2F /* Assets.xcassets */,
 				A67ABD2B2924157A00726A2F /* Persistence.swift */,
 				A67ABD302924157A00726A2F /* Info.plist */,
 				A67ABD2D2924157A00726A2F /* ShelterSafe.xcdatamodeld */,
 				A67ABD282924157A00726A2F /* Preview Content */,
-				468337BD29E64716000B58AF /* ShelterListView.swift */,
 			);
 			path = ShelterSafe;
 			sourceTree = "<group>";
