@@ -8,6 +8,8 @@
 import SwiftUI
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
+import GoogleSignInSwift
 
 struct HomePageView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -17,6 +19,8 @@ struct HomePageView: View {
     @State private var password: String = ""
     @State private var showNewUserView = false
     @State private var errorMessage: String?
+    @State private var newUserCreated = false // add a new state variable to track if a new user is created
+       // ...
     
     struct SmallButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
@@ -54,7 +58,7 @@ struct HomePageView: View {
                             .font(.title3)
                             .autocapitalization(.none)
                             .padding()
-                            .frame(maxWidth: .infinity)
+                            .frame(maxWidth: .infinity, maxHeight: 60)
                             .background(colorScheme == .dark ? Color.black : Color.white)
                             .accentColor(Color(red: 0.83, green: 0.71, blue: 0.71))
                             .foregroundColor(Color(red: 0.83, green: 0.71, blue: 0.71))
@@ -125,12 +129,24 @@ struct HomePageView: View {
                              NewUserView()
                              }*/
                             .padding()
-                            .sheet(isPresented: $showNewUserView) {
-                                NewUserView()
-                                    .frame(width: 400, height: 600)
-                            }
+                            .sheet(isPresented: $showNewUserView, onDismiss: {
+                                        // this closure will be called when the sheet is dismissed
+                                        if newUserCreated {
+                                            showNewUserView = false // dismiss the sheet
+                                            newUserCreated = false // reset the state variable for future use
+                                        }
+                                    }) {
+                                        NewUserView(newUserCreated: $newUserCreated) // pass the binding variable to the NewUserView
+                                            .frame(width: 400, height: 600)
+                                    }
                             .buttonStyle(SmallButtonStyle())
                         }
+                    }
+                    VStack{
+                        GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .icon, state: .normal)) {
+                            
+                        }
+
                     }
                     
                     .frame(width: 300, height: nil) // Center the login form
