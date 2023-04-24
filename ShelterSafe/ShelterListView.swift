@@ -50,15 +50,12 @@ struct ShelterListView: View {
             }
             Spacer()
             Button("Create Shelter") {
-                RawData.getShelters { fetchedShelters in
-                    self.numberOfShelters = fetchedShelters.count
+                Task {
+                  
+                    let shelter = Shelter(id: 21, name: shelterName, latitude: latitude ?? 0, longitude: longitude ?? 0)
+                    
+                    await RawData.addShelter(shelter: shelter)
                 }
-                
-                let id = self.numberOfShelters + 1
-                let shelter = Shelter(id: id, name: shelterName, latitude: latitude ?? 0, longitude: longitude ?? 0)
-                
-                RawData.addShelter(shelter: shelter)
-                
             }
         }.padding()
  
