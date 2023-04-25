@@ -21,7 +21,6 @@ class RawData {
     var userLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)" }
     
     
-    
 
     
     
