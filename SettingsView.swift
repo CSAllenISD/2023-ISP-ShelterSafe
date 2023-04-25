@@ -18,7 +18,6 @@ struct SettingsView: View {
                 List {
                     NavigationLink(destination: CreateShelterView()) {
                         Text("Create A New Shelter")
-                        CreateShelterView()
                     }
                     
                     Text("Place Holder")
