@@ -20,15 +20,15 @@ struct SettingsView: View {
                         Text("Create A New Shelter")
                     }
                     
-                    Text("Place Holder")
                     Text(" ")
-                    Text("Place Holder")
                     Text(" ")
-                    Text("Place Holder")
                     Text(" ")
-                    Text("Place Holder")
                     Text(" ")
-                    Text("Place Holder")
+                    Text(" ")
+                    Text(" ")
+                    Text(" ")
+                    Text(" ")
+                    Text(" ")
                 }
             }
             .navigationTitle("Settings")

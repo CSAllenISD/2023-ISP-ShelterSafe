@@ -35,7 +35,7 @@ struct ToolBoxView: View {
                         NavigationLink(destination: Text(alert.properties.headline)) { Text(alert.properties.event)
                     }
                 }
-                    
+                                        
                    Text("No Current Disaster")
             }
 
