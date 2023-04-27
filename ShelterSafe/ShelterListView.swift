@@ -52,7 +52,7 @@ struct ShelterListView: View {
             Button("Create Shelter") {
                 Task {
                   
-                    let shelter = Shelter(id: 21, name: shelterName, latitude: latitude ?? 0, longitude: longitude ?? 0)
+                    let shelter = Shelter(id: 21, name: "shelterName", latitude: latitude ?? 0, longitude: longitude ?? 0, description: "test", foodAvailability: "Max", populationCapacity: "Almost Full", maxCapacity: 100)
                     
                     await RawData.addShelter(shelter: shelter)
                 }

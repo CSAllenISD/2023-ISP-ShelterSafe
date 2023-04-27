@@ -91,22 +91,30 @@ class RawData {
     
     
     static func addShelter(shelter: Shelter) async {
-        
-        guard let httpBody = try? JSONEncoder().encode(shelter) else { return }
-        guard let url = URL(string: "https://codermerlin.academy/igis/onik_hoque/add_shelters") else { return }
-        var request = URLRequest(url: url)
-        
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        
-        do {
-            let (data, _) = try await URLSession.shared.upload(for: request, from: httpBody)
-        } catch {
-            print("Checkout failed.")
+        let url = URL(string: "https://codermerlin.academy/igis/onik-hoque/add_shelters")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            let encoder = JSONEncoder()
+            do {
+                let jsonData = try encoder.encode(shelter)
+                request.httpBody = jsonData
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                let session = URLSession.shared
+                session.dataTask(with: request) { data, response, error in
+                    if let data = data {
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data, options: [])
+                            print(json)
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }.resume()
+            } catch {
+                print(error)
+            }
         }
-    
-    }
+        
     
     
     
