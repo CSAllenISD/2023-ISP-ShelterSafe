@@ -10,19 +10,15 @@ import Foundation
 struct Shelter: Codable {
     let id : Int
     let name : String
- //   let properties : ShelterProperties
     let latitude : Double
     let longitude : Double
-    
-}
-
-struct ShelterProperties : Codable {
     let description: String
     let foodAvailability : String
     let PopulationCapacity : String
     let MaxCapacity : Int
-    
 }
+
+
 
 enum Severity {
     case Minor
