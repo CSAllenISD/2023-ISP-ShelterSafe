@@ -97,7 +97,10 @@ struct HomePageView: View {
                                                 .padding()
                                         }
                         Button(action: login) {
-                            Text("Sign In")
+                            NavigationLink(destination: CreateShelterView()) {
+                                Text("Sign In")
+                            }
+                            
                                 .font(.title3)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
@@ -142,6 +145,7 @@ struct HomePageView: View {
                             .buttonStyle(SmallButtonStyle())
                         }
                     }
+                    
                     VStack{
                         GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .icon, state: .normal)) {
                             

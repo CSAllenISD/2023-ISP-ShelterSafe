@@ -16,9 +16,6 @@ struct SettingsView: View {
             
             VStack {
                 List {
-                    NavigationLink(destination: CreateShelterView()) {
-                        Text("Create A New Shelter")
-                    }
                     
                     Text(" ")
                     Text(" ")
@@ -31,8 +28,10 @@ struct SettingsView: View {
                     Text(" ")
                 }
             }
-            .navigationTitle("Settings")
+              
+            .navigationTitle("Settings").foregroundColor(Color(red: 0.83, green: 0.71, blue: 0.71))
 
+            
         }
         
     }
