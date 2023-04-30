@@ -4,49 +4,62 @@
 //
 //  Created by Onik Hoque on 11/15/22.
 //
-
 import SwiftUI
-import MapboxMaps
-import MapboxCoreMaps
-
+//import MapboxMaps
+//import MapboxCoreMaps
 
 
 struct ContentView: View {
     @State private var selectedTab = "One"
-    
+    @EnvironmentObject var locationsViewModel: LocationsViewModel
+
     var body: some View {
         
         TabView(selection: $selectedTab) {
             
+            
+            
             VStack{
-                MapBoxMapView()
+                
+                
+                LocationsView().edgesIgnoringSafeArea(.top)
+                    .environmentObject(LocationsViewModel())
+                
             }
+                    .tabItem {
+                        Label("Map", systemImage: "map")
+                    }.tag("Map")
+                
+            HomePageView()
                 .tabItem {
-                    Label("One", systemImage: "map")
-                }.tag("One")
-            
-            ToolBoxView()
-                .tabItem {
-                    Label("Two", systemImage: "gear")
+                    Label("Home Page", systemImage: "house")
                 }
-                .tag("Two")
-            
-            
-            
-           
-            //DetailView().ignoresSafeArea()
-            Text("placeholder")
-                .tabItem {
-                    Label("Three", systemImage: "tornado")
-                }
+                .tag("Home Page")
+                ToolBoxView()
+                    .tabItem {
+                        Label("Weather Watch", systemImage: "tornado")
+                    }
+                    .tag("Settings")
+                
+                
+                //DetailView().ignoresSafeArea()
+                Text("placeholder")
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }.tint(Color.yellow)
+                
+                
+            }
+                
         }
+        
     }
-}
+
     
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
+                
         }
     }
-

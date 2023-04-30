@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41FB237629E12AB300988B4E /* LocationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB237529E12AB300988B4E /* LocationDataService.swift */; };
+		41FB238729E12C1100988B4E /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB238629E12C1100988B4E /* LocationViewModel.swift */; };
+		41FB238B29E12C5200988B4E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB238A29E12C5200988B4E /* Location.swift */; };
+		4209228629DBF4F9003B7B68 /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209228529DBF4F9003B7B68 /* NewUserView.swift */; };
+		428EE52B29E277AB009EF0E9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 428EE52A29E277AB009EF0E9 /* GoogleSignIn */; };
+		428EE52D29E277AB009EF0E9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 428EE52C29E277AB009EF0E9 /* GoogleSignInSwift */; };
+		42D3934029DD2EC8001A5EEF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 42D3933F29DD2EC8001A5EEF /* FirebaseAuth */; };
+		42D3934229DD2EC8001A5EEF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 42D3934129DD2EC8001A5EEF /* FirebaseFirestore */; };
+		42D3934729DD4BFA001A5EEF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 42D3934629DD4BFA001A5EEF /* Lottie */; };
 		4610816F29D4019200ADE069 /* NWS_API_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610816E29D4019200ADE069 /* NWS_API_Model.swift */; };
 		4610817129D526B900ADE069 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610817029D526B900ADE069 /* TestView.swift */; };
 		461BE59C295D7011005EB14F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BE59B295D7011005EB14F /* Model.swift */; };
-		464A9B032936B18500015668 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 464A9B022936B18500015668 /* MapboxMaps */; };
 		464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B042936B24400015668 /* MapBoxMapView.swift */; };
 		464A9B072937173E00015668 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B062937173E00015668 /* DetailView.swift */; };
 		464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9B09295D6E1200015668 /* ToolBoxView.swift */; };
-		468337BE29E64716000B58AF /* ShelterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468337BD29E64716000B58AF /* ShelterListView.swift */; };
 		A6341E5829C24E1F009A6D88 /* RawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6341E5729C24E1F009A6D88 /* RawData.swift */; };
 		A67ABD232924157800726A2F /* ShelterSafeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD222924157800726A2F /* ShelterSafeApp.swift */; };
-		A67ABD252924157800726A2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD242924157800726A2F /* ContentView.swift */; };
 		A67ABD272924157A00726A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67ABD262924157A00726A2F /* Assets.xcassets */; };
 		A67ABD2A2924157A00726A2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67ABD292924157A00726A2F /* Preview Assets.xcassets */; };
 		A67ABD2C2924157A00726A2F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD2B2924157A00726A2F /* Persistence.swift */; };
@@ -26,6 +32,14 @@
 		A67ABD442924157A00726A2F /* ShelterSafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD432924157A00726A2F /* ShelterSafeUITests.swift */; };
 		A67ABD462924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67ABD452924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift */; };
 		A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E99F7329D5F7090039C880 /* ShelterModel.swift */; };
+		ECA677C329DA1BB900F0E2F4 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */; };
+		FB2679D429E374140055DEEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2679D329E374140055DEEE /* GoogleService-Info.plist */; };
+		FB2679DA29E375470055DEEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679D929E375470055DEEE /* ContentView.swift */; };
+		FB2679DC29E375480055DEEE /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679DB29E375480055DEEE /* LocationDetailView.swift */; };
+		FB2679DE29E3754A0055DEEE /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679DD29E3754A0055DEEE /* LocationMapAnnotationView.swift */; };
+		FB2679E029E3754C0055DEEE /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679DF29E3754C0055DEEE /* LocationPreviewView.swift */; };
+		FB2679E229E3754E0055DEEE /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679E129E3754E0055DEEE /* LocationsListView.swift */; };
+		FB2679E429E375500055DEEE /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2679E329E375500055DEEE /* LocationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,17 +60,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41FB237529E12AB300988B4E /* LocationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataService.swift; sourceTree = "<group>"; };
+		41FB238629E12C1100988B4E /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		41FB238A29E12C5200988B4E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4209228529DBF4F9003B7B68 /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
 		4610816E29D4019200ADE069 /* NWS_API_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWS_API_Model.swift; sourceTree = "<group>"; };
 		4610817029D526B900ADE069 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		461BE59B295D7011005EB14F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		464A9B042936B24400015668 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		464A9B062937173E00015668 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		464A9B09295D6E1200015668 /* ToolBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBoxView.swift; sourceTree = "<group>"; };
-		468337BD29E64716000B58AF /* ShelterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterListView.swift; sourceTree = "<group>"; };
 		A6341E5729C24E1F009A6D88 /* RawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawData.swift; sourceTree = "<group>"; };
 		A67ABD1F2924157800726A2F /* ShelterSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelterSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67ABD222924157800726A2F /* ShelterSafeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeApp.swift; sourceTree = "<group>"; };
-		A67ABD242924157800726A2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A67ABD262924157A00726A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A67ABD292924157A00726A2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A67ABD2B2924157A00726A2F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -68,6 +84,14 @@
 		A67ABD432924157A00726A2F /* ShelterSafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeUITests.swift; sourceTree = "<group>"; };
 		A67ABD452924157A00726A2F /* ShelterSafeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSafeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A6E99F7329D5F7090039C880 /* ShelterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterModel.swift; sourceTree = "<group>"; };
+		ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		FB2679D329E374140055DEEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Library/Messages/Attachments/00/00/A1282831-995D-4DFB-947C-C2682DBF2162/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB2679D929E375470055DEEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FB2679DB29E375480055DEEE /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		FB2679DD29E3754A0055DEEE /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
+		FB2679DF29E3754C0055DEEE /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
+		FB2679E129E3754E0055DEEE /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
+		FB2679E329E375500055DEEE /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +99,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464A9B032936B18500015668 /* MapboxMaps in Frameworks */,
+				428EE52D29E277AB009EF0E9 /* GoogleSignInSwift in Frameworks */,
+				42D3934029DD2EC8001A5EEF /* FirebaseAuth in Frameworks */,
+				428EE52B29E277AB009EF0E9 /* GoogleSignIn in Frameworks */,
+				42D3934229DD2EC8001A5EEF /* FirebaseFirestore in Frameworks */,
+				42D3934729DD4BFA001A5EEF /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,13 +124,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41FB237429E12A7500988B4E /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				41FB237529E12AB300988B4E /* LocationDataService.swift */,
+			);
+			path = DataServices;
+			sourceTree = "<group>";
+		};
+		41FB238529E12BDD00988B4E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				41FB238629E12C1100988B4E /* LocationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		41FB238929E12C3C00988B4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				41FB238A29E12C5200988B4E /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A6341E5629C24DCD009A6D88 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				461BE59B295D7011005EB14F /* Model.swift */,
+				4610816E29D4019200ADE069 /* NWS_API_Model.swift */,
 				A6E99F7329D5F7090039C880 /* ShelterModel.swift */,
 				A6341E5729C24E1F009A6D88 /* RawData.swift */,
-				4610816E29D4019200ADE069 /* NWS_API_Model.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -131,13 +183,23 @@
 			isa = PBXGroup;
 			children = (
 				A67ABD222924157800726A2F /* ShelterSafeApp.swift */,
+				FB2679D929E375470055DEEE /* ContentView.swift */,
+				FB2679DB29E375480055DEEE /* LocationDetailView.swift */,
+				FB2679DD29E3754A0055DEEE /* LocationMapAnnotationView.swift */,
+				FB2679DF29E3754C0055DEEE /* LocationPreviewView.swift */,
+				FB2679E129E3754E0055DEEE /* LocationsListView.swift */,
+				FB2679E329E375500055DEEE /* LocationsView.swift */,
+				41FB238929E12C3C00988B4E /* Models */,
 				464A9B062937173E00015668 /* DetailView.swift */,
+				41FB238529E12BDD00988B4E /* ViewModels */,
+				41FB237429E12A7500988B4E /* DataServices */,
 				A6341E5629C24DCD009A6D88 /* Data */,
+				ECA677C229DA1BB900F0E2F4 /* HomePageView.swift */,
+				4209228529DBF4F9003B7B68 /* NewUserView.swift */,
+				FB2679D329E374140055DEEE /* GoogleService-Info.plist */,
 				464A9B09295D6E1200015668 /* ToolBoxView.swift */,
 				464A9B042936B24400015668 /* MapBoxMapView.swift */,
 				4610817029D526B900ADE069 /* TestView.swift */,
-				A67ABD242924157800726A2F /* ContentView.swift */,
-				468337BD29E64716000B58AF /* ShelterListView.swift */,
 				A67ABD262924157A00726A2F /* Assets.xcassets */,
 				A67ABD2B2924157A00726A2F /* Persistence.swift */,
 				A67ABD302924157A00726A2F /* Info.plist */,
@@ -189,7 +251,11 @@
 			);
 			name = ShelterSafe;
 			packageProductDependencies = (
-				464A9B022936B18500015668 /* MapboxMaps */,
+				42D3933F29DD2EC8001A5EEF /* FirebaseAuth */,
+				42D3934129DD2EC8001A5EEF /* FirebaseFirestore */,
+				42D3934629DD4BFA001A5EEF /* Lottie */,
+				428EE52A29E277AB009EF0E9 /* GoogleSignIn */,
+				428EE52C29E277AB009EF0E9 /* GoogleSignInSwift */,
 			);
 			productName = ShelterSafe;
 			productReference = A67ABD1F2924157800726A2F /* ShelterSafe.app */;
@@ -264,7 +330,9 @@
 			);
 			mainGroup = A67ABD162924157800726A2F;
 			packageReferences = (
-				464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+				42D3933E29DD2EC8001A5EEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				42D3934529DD4BFA001A5EEF /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				428EE52929E277AB009EF0E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = A67ABD202924157800726A2F /* Products */;
 			projectDirPath = "";
@@ -283,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67ABD2A2924157A00726A2F /* Preview Assets.xcassets in Resources */,
+				FB2679D429E374140055DEEE /* GoogleService-Info.plist in Resources */,
 				A67ABD272924157A00726A2F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,17 +378,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6341E5829C24E1F009A6D88 /* RawData.swift in Sources */,
+				ECA677C329DA1BB900F0E2F4 /* HomePageView.swift in Sources */,
+				FB2679DC29E375480055DEEE /* LocationDetailView.swift in Sources */,
 				4610816F29D4019200ADE069 /* NWS_API_Model.swift in Sources */,
+				41FB238729E12C1100988B4E /* LocationViewModel.swift in Sources */,
 				4610817129D526B900ADE069 /* TestView.swift in Sources */,
 				464A9B052936B24400015668 /* MapBoxMapView.swift in Sources */,
+				FB2679E429E375500055DEEE /* LocationsView.swift in Sources */,
+				41FB237629E12AB300988B4E /* LocationDataService.swift in Sources */,
+				FB2679DA29E375470055DEEE /* ContentView.swift in Sources */,
 				464A9B072937173E00015668 /* DetailView.swift in Sources */,
+				41FB238B29E12C5200988B4E /* Location.swift in Sources */,
 				A67ABD2C2924157A00726A2F /* Persistence.swift in Sources */,
-				A67ABD252924157800726A2F /* ContentView.swift in Sources */,
+				4209228629DBF4F9003B7B68 /* NewUserView.swift in Sources */,
 				A67ABD2F2924157A00726A2F /* ShelterSafe.xcdatamodeld in Sources */,
 				464A9B0A295D6E1200015668 /* ToolBoxView.swift in Sources */,
+				FB2679E229E3754E0055DEEE /* LocationsListView.swift in Sources */,
 				A6E99F7429D5F7090039C880 /* ShelterModel.swift in Sources */,
 				A67ABD232924157800726A2F /* ShelterSafeApp.swift in Sources */,
-				468337BE29E64716000B58AF /* ShelterListView.swift in Sources */,
+				FB2679DE29E3754A0055DEEE /* LocationMapAnnotationView.swift in Sources */,
+				FB2679E029E3754C0055DEEE /* LocationPreviewView.swift in Sources */,
 				461BE59C295D7011005EB14F /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,22 +557,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShelterSafe/Preview Content\"";
+				DEVELOPMENT_TEAM = 89L98VZ22A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShelterSafe/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Gets users current location and displays on map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.ShelterSafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShelterSafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -510,22 +589,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShelterSafe/Preview Content\"";
+				DEVELOPMENT_TEAM = 89L98VZ22A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShelterSafe/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Gets users current location and displays on map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.ShelterSafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShelterSafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -647,21 +727,57 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+		428EE52929E277AB009EF0E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
+		42D3933E29DD2EC8001A5EEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		42D3934529DD4BFA001A5EEF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		464A9B022936B18500015668 /* MapboxMaps */ = {
+		428EE52A29E277AB009EF0E9 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 464A9B012936B18500015668 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
-			productName = MapboxMaps;
+			package = 428EE52929E277AB009EF0E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		428EE52C29E277AB009EF0E9 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 428EE52929E277AB009EF0E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		42D3933F29DD2EC8001A5EEF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42D3933E29DD2EC8001A5EEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		42D3934129DD2EC8001A5EEF /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42D3933E29DD2EC8001A5EEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		42D3934629DD4BFA001A5EEF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42D3934529DD4BFA001A5EEF /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 
