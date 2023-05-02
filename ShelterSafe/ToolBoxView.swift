@@ -17,9 +17,6 @@ struct ToolBoxView: View {
     @State var alerts : [NWSAlertFeature] = []
     
     
- 
-    
-    
     var userLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }
     var userLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)" }
     
