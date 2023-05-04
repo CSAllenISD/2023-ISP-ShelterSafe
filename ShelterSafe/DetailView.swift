@@ -9,52 +9,15 @@ struct Shelter: Identifiable {
     var capacity: Int
 }
 
-class ShelterStore: ObservableObject {
-    @Published var shelters = [Shelter]()
-    
-    func addShelter(shelter: Shelter) {
-        shelters.append(shelter)
-    }
-}
-
-struct CreateShelterView: View {
-    @State var name = ""
-    @State var location = ""
-    @State var contact = ""
-    @State var type = ""
-    @State var capacity = ""
-    @ObservedObject var shelterStore: ShelterStore
-    
-    var body: some View {
-        Form {
-            Section(header: Text("Shelter Info")) {
-                TextField("Name", text: $name)
-                TextField("Location", text: $location)
-                TextField("Contact", text: $contact)
-                TextField("Type", text: $type)
-                TextField("Capacity", text: $capacity)
-                    .keyboardType(.numberPad)
-            }
-            
-            Section {
-                Button(action: {
-                    guard let capacityInt = Int(self.capacity) else { return }
-                    let shelter = Shelter(name: self.name, location: self.location, contact: self.contact, type: self.type, capacity: capacityInt)
-                    self.shelterStore.addShelter(shelter: shelter)
-                }) {
-                    Text("Create Shelter")
-                }
-            }
-        }
-        .navigationBarTitle("Create Shelter")
-    }
-}
-
 struct ShelterListView: View {
-    @ObservedObject var shelterStore: ShelterStore
+    let shelters = [
+        Shelter(name: "Shelter A", location: "Location A", contact: "Contact A", type: "Type A", capacity: 20),
+        Shelter(name: "Shelter B", location: "Location B", contact: "Contact B", type: "Type B", capacity: 30),
+        Shelter(name: "Shelter C", location: "Location C", contact: "Contact C", type: "Type C", capacity: 40)
+    ]
     
     var body: some View {
-        List(shelterStore.shelters) { shelter in
+        List(shelters) { shelter in
             VStack(alignment: .leading) {
                 Text(shelter.name)
                 Text(shelter.location)
@@ -66,25 +29,9 @@ struct ShelterListView: View {
 }
 
 struct ContentView: View {
-    @StateObject var shelterStore = ShelterStore()
-    @State private var showingCreateShelterView = false
-    
     var body: some View {
         NavigationView {
-            VStack {
-                Button(action: {
-                    self.showingCreateShelterView = true
-                }) {
-                    Text("Create Shelter")
-                }
-                
-                NavigationLink(destination: ShelterListView(shelterStore: shelterStore)) {
-                    Text("View Shelters")
-                }
-            }
-            .sheet(isPresented: $showingCreateShelterView) {
-                CreateShelterView(shelterStore: shelterStore)
-            }
+            ShelterListView()
         }
     }
 }
