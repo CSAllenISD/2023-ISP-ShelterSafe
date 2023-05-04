@@ -35,15 +35,16 @@ struct ContentView: View {
                     Label("Home Page", systemImage: "house")
                 }
                 .tag("Home Page")
+            
                 ToolBoxView()
                     .tabItem {
                         Label("Weather Watch", systemImage: "tornado")
                     }
-                    .tag("Settings")
+                    .tag("WeatherWatch")
                 
                 
                 //DetailView().ignoresSafeArea()
-                Text("placeholder")
+                SettingsView()
                     .tabItem {
                         Label("Settings", systemImage: "gear")
                     }.tint(Color.yellow)
