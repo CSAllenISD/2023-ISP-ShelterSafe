@@ -10,36 +10,12 @@ import Foundation
 struct Shelter: Codable {
     let id : Int
     let name : String
- //   let properties : ShelterProperties
     let latitude : Double
     let longitude : Double
-    
-}
-
-struct ShelterProperties : Codable {
     let description: String
     let foodAvailability : String
-    let PopulationCapacity : String
-    let MaxCapacity : Int
-    
+    let populationCapacity : String
+    let maxCapacity : Int
 }
 
-enum Severity {
-    case Minor
-    case Moderate
-    case Severe
-}
-
-enum FoodAvailability {
-    case Shortage
-    case Moderate
-    case Surplus
-}
-
-enum PopulationCapacity {
-    case Empty
-    case Medium
-    case Full
-    case Overfilled
-}
 

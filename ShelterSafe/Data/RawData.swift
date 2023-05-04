@@ -76,7 +76,7 @@ class RawData {
     
     
     static func getShelters( completion:@escaping ([Shelter]) -> ()) {
-            guard let url = URL(string: "https://codermerlin.academy/igis/onik_hoque/get_shelters") else { return }
+            guard let url = URL(string: "https://www.codermerlin.academy/igis/onik-hoque/get_shelters") else { return }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
                 let shelters = try! JSONDecoder().decode([Shelter].self, from: data!)
@@ -89,23 +89,31 @@ class RawData {
         }
     
     
-    static func addShelter(shelter: Shelter) {
+    static func addShelter(shelter: Shelter) async {
+        let url = URL(string: "https://codermerlin.academy/igis/onik-hoque/add_shelters")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            let encoder = JSONEncoder()
+            do {
+                let jsonData = try encoder.encode(shelter)
+                request.httpBody = jsonData
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                let session = URLSession.shared
+                session.dataTask(with: request) { data, response, error in
+                    if let data = data {
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data, options: [])
+                            print(json)
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }.resume()
+            } catch {
+                print(error)
+            }
+        }
         
-        guard let url = URL(string: "https://codermerlin.academy/igis/onik_hoque/add_shelters") else { return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        guard let httpBody = try? JSONEncoder().encode(shelter) else { return }
-        
-        request.httpBody = httpBody
-        
-        URLSession.shared.dataTask(with:request) { shelter, response, error in
-            //pass
-        }.resume()
-    
-    }
     
     
     
