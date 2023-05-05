@@ -60,7 +60,7 @@
       "location" : "https://github.com/google/GoogleSignIn-iOS",
       "state" : {
         "branch" : "main",
-        "revision" : "625dc9edd205d8c31a1a8037ac6a257a28cd7405"
+        "revision" : "d2afd42975bec4a3b87d9c49ef0e3fe1c9c3e3b9"
       }
     },
     {
@@ -113,8 +113,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios.git",
       "state" : {
-        "revision" : "4e51b71c6ef1b645c9a83de112d627c919143137",
-        "version" : "4.1.3"
+        "revision" : "d6feea26a370019b4d3a85f5984cb95a2734776f",
+        "version" : "4.2.0"
       }
     },
     {
