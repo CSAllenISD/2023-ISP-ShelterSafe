@@ -65,12 +65,14 @@ struct CreateShelterView: View {
                 
                 Picker("Food Availability", selection: $foodAvailability) {
                     Text("Surplus")
+                    Text("Abundant")
                     Text("Moderate")
                     Text("Shortage")
                 }
                 
                 Picker("Population Capacity", selection: $populationCapacity) {
                     Text("Overfilled")
+                    Text("Filled")
                     Text("Moderate")
                     Text("Near Empty")
                 }
