@@ -23,17 +23,17 @@ struct ContentView: View {
                 
             }
                     .tabItem {
-                        Label("Map", systemImage: "map")
+                        Label("Map", image: "map")
                     }.tag("Map")
                 
             HomePageView()
                 .tabItem {
-                    Label("Home Page", systemImage: "house")
+                    Label("Home Page", image: "house")
                 }
                 .tag("Home Page")
                 ToolBoxView()
                     .tabItem {
-                        Label("Weather Watch", systemImage: "tornado")
+                        Label("Weather Watch", image: "tornado")
                     }
                     .tag("Settings")
                 
@@ -41,7 +41,7 @@ struct ContentView: View {
                 //DetailView().ignoresSafeArea()
                 Text("placeholder")
                     .tabItem {
-                        Label("Settings", systemImage: "gear")
+                        Label("Settings", image: "gear")
                     }.tint(Color.yellow)
                 
                 
