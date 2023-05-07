@@ -26,6 +26,7 @@ struct CreateShelterView: View {
     
     @State private var showingSuccessAlert = false
     @State private var showingFailureAlert = false
+    @State private var showingServerFailureAlert = false
     
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -88,28 +89,29 @@ struct CreateShelterView: View {
             }
             
             Button("Create Shelter") {
-                
                 if (name != "" && description != "" && latitude != 0.0) {
-                    
-                    var idToReturn = 0
-                    
-                    getLastShelterID { id in
-                        idToReturn = id ?? 0
-                    }
-                    let shelterToAdd = Shelter(id: idToReturn, name: name, latitude: latitude, longitude: longitude, description: description, foodAvailability: foodAvailability, populationCapacity: populationCapacity, maxCapacity: maxCapacity)
                     Task {
-                        await RawData.addShelter(shelter: shelterToAdd)
+                        if let idToReturn = await getLastID() {
+                            let shelterToAdd = Shelter(id: idToReturn + 1, name: name, latitude: latitude, longitude: longitude, description: description, foodAvailability: foodAvailability, populationCapacity: populationCapacity, maxCapacity: maxCapacity)
+                            await RawData.addShelter(shelter: shelterToAdd)
+                            showingSuccessAlert = true
+                        } else {
+                            showingServerFailureAlert = true
+                        }
+
                     }
-                    
-                    showingSuccessAlert = true
-                    
                 } else {
                     showingFailureAlert = true
                 }
-                
-
-            }.alert(isPresented: $showingFailureAlert, content: {
+            }
+.alert(isPresented: $showingFailureAlert, content: {
                 Alert(title: Text("Please make sure all fields are filled out before attempting to create a shelter."))
+            })
+.alert(isPresented: $showingSuccessAlert, content: {
+                Alert(title: Text("Successfully uploaded data."))
+            })
+.alert(isPresented: $showingServerFailureAlert, content: {
+                Alert(title: Text("Server could not be reached. Try again later."))
             })
                 
                 
@@ -123,13 +125,22 @@ struct CreateShelterView: View {
     }
 }
     
-func getLastShelterID(completion: @escaping (Int?) -> Void) {
-    RawData.getShelters { shelters in
-        guard let lastShelter = shelters.last else {
-            completion(0)
-            return
+func getLastID() async -> Int? {
+    guard let url = URL(string: "https://www.codermerlin.academy/igis/onik-hoque/get_shelters") else { return nil }
+    
+    do {
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decoder = JSONDecoder()
+        let shelters = try decoder.decode([Shelter].self, from: data)
+        
+        if let lastObject = shelters.last {
+            return lastObject.id
+        } else {
+            return 0
         }
-        completion(lastShelter.id)
+    } catch {
+        print("Error: \(error.localizedDescription)")
+        return 0
     }
 }
 
