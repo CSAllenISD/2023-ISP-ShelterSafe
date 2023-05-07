@@ -202,6 +202,15 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         let distance = earthRadius * c
         return distance
     }
+    
+    func shelterToLocation(shelter: Shelter) -> Location {
+        let coordinates = CLLocationCoordinate2D(latitude: shelter.latitude, longitude: shelter.longitude)
+        let imageNames = ["defaultShelterImage"]
+        let description = shelter.description
+        let name = shelter.name + " Shelter"
+        let cityName = "Unknown City"
+        return Location(name: name, cityName: cityName, coordinates: coordinates, description: description, imageNames: imageNames, link: <#String#>)
+    }
 
 }
 
