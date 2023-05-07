@@ -19,8 +19,8 @@ struct CreateShelterView: View {
     @State private var latitude = 0.0
     @State private var longitude = 0.0
     @State private var description = ""
-    @State private var foodAvailability = ""
-    @State private var populationCapacity = ""
+    @State private var foodAvailability = "Surplus"
+    @State private var populationCapacity = "Overfilled"
     @State private var maxCapacity = 0
     @State private var shelterArray = [Shelter]()
     
@@ -64,17 +64,18 @@ struct CreateShelterView: View {
                     .tint(Color(red: 0.83, green: 0.71, blue: 0.71))
                 
                 Picker("Food Availability", selection: $foodAvailability) {
-                    Text("Surplus")
-                    Text("Abundant")
-                    Text("Moderate")
-                    Text("Shortage")
+                    Text("Surplus").tag("Surplus")
+                    Text("Abundant").tag("Abundant")
+                    Text("Moderate").tag("Moderate")
+                    Text("Shortage").tag("Shortage")
+                    //Text(String())
                 }
                 
                 Picker("Population Capacity", selection: $populationCapacity) {
-                    Text("Overfilled")
-                    Text("Filled")
-                    Text("Moderate")
-                    Text("Near Empty")
+                    Text("Overfilled").tag("Overfilled")
+                    Text("Filled").tag("Filled")
+                    Text("Moderate").tag("Moderate")
+                    Text("Near Empty").tag("Near Empty")
                 }
                 
                 
@@ -88,12 +89,28 @@ struct CreateShelterView: View {
             
             Button("Create Shelter") {
                 
-                if (name != "" && latitude != 0.0 && longitude != 0.0 && description != "" && foodAvailability != "" && populationCapacity != "" && maxCapacity != 0) {
+                if (name != "" && description != "" && latitude != 0.0) {
                     
+                    var idToReturn = 0
+                    
+                    getLastShelterID { id in
+                        idToReturn = id ?? 0
+                    }
+                    let shelterToAdd = Shelter(id: idToReturn, name: name, latitude: latitude, longitude: longitude, description: description, foodAvailability: foodAvailability, populationCapacity: populationCapacity, maxCapacity: maxCapacity)
+                    Task {
+                        await RawData.addShelter(shelter: shelterToAdd)
+                    }
+                    
+                    showingSuccessAlert = true
+                    
+                } else {
+                    showingFailureAlert = true
                 }
                 
 
-            }
+            }.alert(isPresented: $showingFailureAlert, content: {
+                Alert(title: Text("Please make sure all fields are filled out before attempting to create a shelter."))
+            })
                 
                 
                 
@@ -106,17 +123,16 @@ struct CreateShelterView: View {
     }
 }
     
-    func getNextID() -> Int {
-        var currentShelterArray = [Shelter]()
-        RawData.getShelters { fetchedShelters in currentShelterArray = fetchedShelters
+func getLastShelterID(completion: @escaping (Int?) -> Void) {
+    RawData.getShelters { shelters in
+        guard let lastShelter = shelters.last else {
+            completion(0)
+            return
         }
-        
-        if let lastShelter = currentShelterArray.last {
-            return lastShelter.id
-        } else {
-            return 0
-        }
+        completion(lastShelter.id)
     }
+}
+
     
 
 
