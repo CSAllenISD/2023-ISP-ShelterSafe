@@ -196,7 +196,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         let description = shelter.description
         let name = shelter.name + " Shelter"
         let cityName = "Unknown City"
-        return Location(name: name, cityName: cityName, coordinates: coordinates, description: description, imageNames: imageNames, link: <#String#>)
+        return Location(name: name, cityName: cityName, coordinates: coordinates, description: description, imageNames: imageNames, link: "https://google.com")
     }
 
 }
