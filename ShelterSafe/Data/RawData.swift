@@ -30,20 +30,7 @@ class RawData {
     }
     
     
-    
-    static func getUsers(completion:@escaping ([User]) -> ()) {
-            guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
-        
-            URLSession.shared.dataTask(with: url) { (data, _, _) in
-                let users = try! JSONDecoder().decode([User].self, from: data!)
-                print(users)
-                
-                DispatchQueue.main.async {
-                    completion(users)
-                }
-            }
-            .resume()
-        }
+
     
   /*  func getAlerts(completion:@escaping ([NWSAlertFeature]) -> ()) {
             guard let url = URL(string: "https://api.weather.gov/alerts/active?area=NY") else { return }
@@ -188,8 +175,29 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         lastLocation = location
         print(#function, location)
     }
+    
+    func distanceBetweenCoordinates(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
+        let earthRadius = 3958.8
+        let lat1Radians = lat1 * Double.pi / 180.0
+        let lon1Radians = lon1 * Double.pi / 180.0
+        let lat2Radians = lat2 * Double.pi / 180.0
+        let lon2Radians = lon2 * Double.pi / 180.0
+        let dLat = lat2Radians - lat1Radians
+        let dLon = lon2Radians - lon1Radians
+        let a = sin(dLat / 2.0) * sin(dLat / 2.0) + cos(lat1Radians) * cos(lat2Radians) * sin(dLon / 2.0) * sin(dLon / 2.0)
+        let c = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
+        let distance = earthRadius * c
+        return distance
+    }
+    
+    func shelterToLocation(shelter: Shelter) -> Location {
+        let coordinates = CLLocationCoordinate2D(latitude: shelter.latitude, longitude: shelter.longitude)
+        let imageNames = ["defaultShelterImage"]
+        let description = shelter.description
+        let name = shelter.name + " Shelter"
+        let cityName = "Unknown City"
+        return Location(name: name, cityName: cityName, coordinates: coordinates, description: description, imageNames: imageNames, link: "https://google.com")
+    }
+
 }
-
-
-
 
