@@ -27,29 +27,26 @@ struct ContentView: View {
                 
             }
                     .tabItem {
-                        Label("Map", systemImage: "map")
+                        Label("Map", image: "map")
                     }.tag("Map")
                 
-            HomePageView()
-                .tabItem {
-                    Label("Home Page", systemImage: "house")
-                }
-                .tag("Home Page")
-                ToolBoxView()
+                AlertsView()
                     .tabItem {
-                        Label("Weather Watch", systemImage: "tornado")
+                        Label("Weather Watch", image: "newTornado")
                     }
                     .tag("Settings")
                 
                 
                 //DetailView().ignoresSafeArea()
-                Text("placeholder")
+               OptionsView()
                     .tabItem {
-                        Label("Settings", systemImage: "gear")
-                    }.tint(Color.yellow)
+                        Label("Options", image: "newGears")
+                    }.tint(Color.blue)
                 
                 
-            }
+        }.onAppear() {
+            UITabBar.appearance().backgroundColor = .white
+        }
                 
         }
         

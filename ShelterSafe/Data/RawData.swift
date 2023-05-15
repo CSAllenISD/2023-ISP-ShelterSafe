@@ -64,7 +64,7 @@ class RawData {
     
     
     static func getShelters( completion:@escaping ([Shelter]) -> ()) {
-            guard let url = URL(string: "https://www.codermerlin.academy/igis/onik-hoque/get_shelters") else { return }
+            guard let url = URL(string: "https://www.codermerlin.academy/igis/onik-hoque/get_shelters") else { fatalError("failed to get shelters") }
         
             URLSession.shared.dataTask(with: url) { (data, _, _) in
                 let shelters = try! JSONDecoder().decode([Shelter].self, from: data!)

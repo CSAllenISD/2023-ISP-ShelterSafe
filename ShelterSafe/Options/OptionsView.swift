@@ -15,7 +15,13 @@ struct OptionsView : View {
         NavigationStack {
             List() {
                 NavigationLink("Create a Shelter") {
-                    OptionsView()
+                    CreateShelterView()
+                }
+                NavigationLink("Log In") {
+                    HomePageView()
+                }
+                NavigationLink("View Shelters As List") {
+                    ShelterListView()
                 }
             }
         }

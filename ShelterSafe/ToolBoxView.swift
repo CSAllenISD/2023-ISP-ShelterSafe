@@ -11,7 +11,7 @@ import SwiftUI
 
 //this is the view file
 
-struct ToolBoxView: View {
+struct AlertsView: View {
     
     @EnvironmentObject var locationManager : LocationManager
     @State var alerts : [NWSAlertFeature] = []
@@ -29,6 +29,12 @@ struct ToolBoxView: View {
     var body: some View {
         VStack {
             Text("Disaster Details")
+            
+            if alerts.isEmpty {
+                Spacer()
+                Text("No current alerts for your area")
+                //Spacer()
+            }
             NavigationView {
                 List {
                     ForEach(alerts, id: \.id) { alert in
@@ -39,7 +45,7 @@ struct ToolBoxView: View {
 
                 }
             .onAppear {
-                    RawData.getAlerts(url: "https://api.weather.gov/alerts/active?point=\(userLatitude),\(userLongitude)") { fetchedUsers in
+                    RawData.getAlerts(url: "https://api.weather.gov/alerts/active?point=\(latitude),\(longitude)") { fetchedUsers in
                         self.alerts = fetchedUsers
                     }
 
@@ -61,6 +67,6 @@ struct DisasterDetailView : View {
 
 struct MyView_Previews: PreviewProvider {
     static var previews: some View {
-        ToolBoxView().environmentObject(LocationManager())
+        AlertsView().environmentObject(LocationManager())
     }
 }
